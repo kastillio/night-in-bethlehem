@@ -1,20 +1,36 @@
-.modal-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
+let currentLanguage = "uk";
+
+const textData = {
+    uk: {
+        title: 'Інтерактивна Карта "Ніч у Вифлеємі"',
+        shepherds: "Зустріньте пастухів і почуйте їхню історію.",
+        bakery: "Відвідайте пекарню і відчуйте аромат хліба.",
+        "wise-men": "Зустріньте мудреців, які принесли подарунки."
+    },
+    en: {
+        title: 'Interactive Map "Night in Bethlehem"',
+        shepherds: "Meet the shepherds and hear their story.",
+        bakery: "Visit the bakery and smell the bread.",
+        "wise-men": "Meet the wise men who brought gifts."
+    }
+};
+
+function switchLanguage(lang) {
+    currentLanguage = lang;
+    document.getElementById("title").textContent = textData[currentLanguage].title;
 }
 
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
+function openModal(station) {
+    const imageSrc = `images/${station}.png`;
+    const text = textData[currentLanguage][station] || "No description available.";
+
+    document.getElementById("modal-image").src = imageSrc;
+    document.getElementById("modal-text").textContent = text;
+    document.getElementById("modal").style.display = "block";
 }
 
-.close-button:hover {
-    color: #ff0000;
+function closeModal(event) {
+    if (event.target.id === "modal" || event.target.id === "close-button") {
+        document.getElementById("modal").style.display = "none";
+    }
 }
