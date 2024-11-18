@@ -1,9 +1,9 @@
-let currentLanguage = "uk";
+let currentLanguage = "uk"; // Встановлюємо українську мову за замовчуванням
 
 const textData = {
     uk: {
         title: 'Інтерактивна Карта "Ніч у Вифлеємі"',
-        shepherds: "Зустріньте пастухів і почуйте їхню історію.",
+        shepherds: "Зустріньте пастухів і дізнайтеся про їхню історію.",
         bakery: "Відвідайте пекарню і відчуйте аромат хліба.",
         "wise-men": "Зустріньте мудреців, які принесли подарунки."
     },
@@ -17,20 +17,32 @@ const textData = {
 
 function switchLanguage(lang) {
     currentLanguage = lang;
+    updateText();
+}
+
+function updateText() {
     document.getElementById("title").textContent = textData[currentLanguage].title;
+    document.querySelectorAll(".location-button").forEach(button => {
+        const id = button.getAttribute("onclick").match(/'(\w+)'/)[1];
+        button.textContent = textData[currentLanguage][id];
+    });
 }
 
 function openModal(station) {
-    const imageSrc = `images/${station}.png`;
-    const text = textData[currentLanguage][station] || "No description available.";
+    const imgSrc = `images/${station}.png`;
+    const text = textData[currentLanguage][station] || "Опис відсутній.";
 
-    document.getElementById("modal-image").src = imageSrc;
+    document.getElementById("modal-image").src = imgSrc;
     document.getElementById("modal-text").textContent = text;
-    document.getElementById("modal").style.display = "block";
+    document.getElementById("modal").classList.add("show");
 }
 
 function closeModal(event) {
-    if (event.target.id === "modal" || event.target.id === "close-button") {
-        document.getElementById("modal").style.display = "none";
+    const modal = document.getElementById("modal");
+    if (event.target === modal || event.target.id === "close-modal") {
+        modal.classList.remove("show");
     }
 }
+
+// Ініціалізуємо текст при завантаженні сторінки
+updateText();
