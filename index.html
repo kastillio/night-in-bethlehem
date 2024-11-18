@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Ніч у Вифлеємі: Інтерактивна карта</h1>
+    <header>
+        <h1 id="title">Ніч у Вифлеємі</h1>
+        <button id="language-toggle">EN</button>
+    </header>
+
     <div id="map-container">
         <img src="images/map-background.jpg" alt="Фон карти" id="map-background">
         <div class="location" id="stable" onclick="startMission('stable')">
@@ -23,6 +27,9 @@
             <img src="images/star.png" alt="Зірка Вифлеєму">
         </div>
     </div>
-    <script src="scripts/map.js"></script>
-</body>
-</html>
+
+    <div id="modal" class="hidden">
+        <div id="modal-content">
+            <img id="modal-image" src="" alt="Mission Image">
+            <p id="mission-text"></p>
+           
