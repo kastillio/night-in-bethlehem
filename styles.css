@@ -52,7 +52,6 @@ header {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    position: relative;
     max-width: 300px;
 }
 
@@ -68,6 +67,5 @@ header {
     top: 10px;
     right: 15px;
     font-size: 1.8em;
-    font-weight: bold;
     cursor: pointer;
 }
