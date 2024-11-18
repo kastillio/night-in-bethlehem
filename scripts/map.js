@@ -1,5 +1,6 @@
 const languageData = {
     uk: {
+        title: 'Інтерактивна Карта "Ніч у Вифлеємі"',
         shepherds: "Пастухи",
         registration: "Реєстрація",
         carpenter: "Цех тесляра",
@@ -12,6 +13,7 @@ const languageData = {
         "photo-zone": "Фотозона"
     },
     en: {
+        title: 'Interactive Map "Night in Bethlehem"',
         shepherds: "Shepherds",
         registration: "Registration",
         carpenter: "Carpenter",
@@ -56,10 +58,14 @@ let currentLanguage = "en";
 
 function switchLanguage(language) {
     currentLanguage = language;
-    updateButtonText();
+    updateText();
 }
 
-function updateButtonText() {
+function updateText() {
+    // Змінюємо заголовок
+    document.getElementById("title").textContent = languageData[currentLanguage].title;
+
+    // Оновлюємо текст кнопок
     document.querySelectorAll(".location-button").forEach(button => {
         const id = button.getAttribute("onclick").match(/'(\w+)'/)[1];
         button.textContent = languageData[currentLanguage][id];
@@ -82,5 +88,5 @@ function closeModal() {
     modal.classList.remove("show");
 }
 
-// Ініціалізуємо текст кнопок
-updateButtonText();
+// Ініціалізуємо текст при завантаженні сторінки
+updateText();
