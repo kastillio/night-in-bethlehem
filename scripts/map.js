@@ -1,17 +1,31 @@
-let currentLanguage = "uk"; // Встановлюємо українську мову за замовчуванням
+let currentLanguage = "uk";
 
 const textData = {
     uk: {
         title: 'Інтерактивна Карта "Ніч у Вифлеємі"',
         shepherds: "Зустріньте пастухів і дізнайтеся про їхню історію.",
-        bakery: "Відвідайте пекарню і відчуйте аромат хліба.",
-        "wise-men": "Зустріньте мудреців, які принесли подарунки."
+        registration: "Дізнайтеся про перепис римлян і зареєструйтеся.",
+        carpenter: "Дізнайтеся про ремесло тесляра та його інструменти.",
+        scribe: "Відвідайте намет писаря і дізнайтеся про його записи.",
+        well: "Відвідайте відому криницю Вифлеєма та дізнайтеся про її значення.",
+        bakery: "Завітайте до пекарні та відчуйте аромат свіжого хліба.",
+        spices: "Загляньте в магазин спецій та відчуйте різні аромати.",
+        "wise-men": "Зустріньте мудреців, які принесли подарунки.",
+        stable: "Зайдіть у стайню і дізнайтеся про народження Ісуса.",
+        "photo-zone": "Зробіть пам'ятне фото у фотозоні."
     },
     en: {
         title: 'Interactive Map "Night in Bethlehem"',
         shepherds: "Meet the shepherds and hear their story.",
-        bakery: "Visit the bakery and smell the bread.",
-        "wise-men": "Meet the wise men who brought gifts."
+        registration: "Learn about the Roman census and register.",
+        carpenter: "Discover the carpenter's craft and tools.",
+        scribe: "Visit the scribe's tent and learn about his records.",
+        well: "Visit the famous Bethlehem well and learn its importance.",
+        bakery: "Stop by the bakery and smell the fresh bread.",
+        spices: "Explore the spice market and its aromas.",
+        "wise-men": "Meet the wise men who brought gifts.",
+        stable: "Step into the stable and learn about Jesus' birth.",
+        "photo-zone": "Take a memorable photo in the photo zone."
     }
 };
 
@@ -44,5 +58,4 @@ function closeModal(event) {
     }
 }
 
-// Ініціалізуємо текст при завантаженні сторінки
 updateText();
