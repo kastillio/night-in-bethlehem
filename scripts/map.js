@@ -1,9 +1,37 @@
-let currentLanguage = "uk";
+let currentLanguage = "uk"; // Мова за замовчуванням - українська
 
-const textData = {
+const languageData = {
     uk: {
         title: 'Інтерактивна Карта "Ніч у Вифлеємі"',
-        shepherds: "Зустріньте пастухів і дізнайтеся про їхню історію.",
+        shepherds: "Пастухи",
+        registration: "Реєстрація",
+        carpenter: "Цех тесляра",
+        scribe: "Намет писаря",
+        well: "Вифлеємська криниця",
+        bakery: "Пекарня",
+        spices: "Магазин спецій",
+        "wise-men": "Мудреці",
+        stable: "Стайня",
+        "photo-zone": "Фотозона"
+    },
+    en: {
+        title: 'Interactive Map "Night in Bethlehem"',
+        shepherds: "Shepherds",
+        registration: "Registration",
+        carpenter: "Carpenter",
+        scribe: "Scribe",
+        well: "Bethlehem Well",
+        bakery: "Bakery",
+        spices: "Spice Market",
+        "wise-men": "Wise Men",
+        stable: "Stable",
+        "photo-zone": "Photo Zone"
+    }
+};
+
+const descriptions = {
+    uk: {
+        shepherds: "Зустріньте пастухів і дізнайтеся про їх історію.",
         registration: "Дізнайтеся про перепис римлян і зареєструйтеся.",
         carpenter: "Дізнайтеся про ремесло тесляра та його інструменти.",
         scribe: "Відвідайте намет писаря і дізнайтеся про його записи.",
@@ -15,8 +43,7 @@ const textData = {
         "photo-zone": "Зробіть пам'ятне фото у фотозоні."
     },
     en: {
-        title: 'Interactive Map "Night in Bethlehem"',
-        shepherds: "Meet the shepherds and hear their story.",
+        shepherds: "Meet the shepherds and learn about their story.",
         registration: "Learn about the Roman census and register.",
         carpenter: "Discover the carpenter's craft and tools.",
         scribe: "Visit the scribe's tent and learn about his records.",
@@ -35,27 +62,19 @@ function switchLanguage(lang) {
 }
 
 function updateText() {
-    document.getElementById("title").textContent = textData[currentLanguage].title;
+    // Оновлюємо заголовок
+    document.getElementById("title").textContent = languageData[currentLanguage].title;
+
+    // Оновлюємо текст кнопок
     document.querySelectorAll(".location-button").forEach(button => {
-        const id = button.getAttribute("onclick").match(/'(\w+)'/)[1];
-        button.textContent = textData[currentLanguage][id];
+        const station = button.getAttribute("data-station");
+        button.textContent = languageData[currentLanguage][station];
     });
 }
 
 function openModal(station) {
     const imgSrc = `images/${station}.png`;
-    const text = textData[currentLanguage][station] || "Опис відсутній.";
+    const text = descriptions[currentLanguage][station] || "Опис відсутній.";
 
-    document.getElementById("modal-image").src = imgSrc;
-    document.getElementById("modal-text").textContent = text;
-    document.getElementById("modal").classList.add("show");
-}
-
-function closeModal(event) {
-    const modal = document.getElementById("modal");
-    if (event.target === modal || event.target.id === "close-modal") {
-        modal.classList.remove("show");
-    }
-}
-
-updateText();
+    // Оновлюємо зображення і текст модального вікна
+    document.getElementB
