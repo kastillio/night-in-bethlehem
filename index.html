@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ніч у Вифлеємі - Інтерактивна карта</title>
+    <title>Інтерактивна Карта "Ніч у Вифлеємі"</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 id="title">Інтерактивна Карта "Ніч у Вифлеємі"</h1>
-    <div id="language-buttons">
-        <button onclick="switchLanguage('uk')">Українська</button>
-        <button onclick="switchLanguage('en')">English</button>
-    </div>
+    <header>
+        <h1 id="camp-title">Інтерактивна Карта "Ніч у Вифлеємі"</h1>
+        <div id="language-buttons">
+            <button onclick="switchLanguage('uk')">Українська</button>
+            <button onclick="switchLanguage('en')">English</button>
+        </div>
+    </header>
 
     <div id="location-list">
         <button class="location-button" onclick="openModal('shepherds')">Пастухи</button>
@@ -29,7 +31,7 @@
     <!-- Модальне вікно -->
     <div id="modal" class="hidden" onclick="closeModal(event)">
         <div id="modal-content" onclick="event.stopPropagation()">
-            <span id="close-modal" class="close-button" onclick="closeModal()">&times;</span>
+            <button id="close-modal" class="close-button" onclick="closeModal()">&times;</button>
             <img id="modal-image" src="" alt="Station Image" class="modal-img">
             <p id="modal-text"></p>
         </div>
