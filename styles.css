@@ -1,6 +1,34 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #f0f0f0;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+#language-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#location-list {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.location-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ffeb3b;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
 }
 
 #modal {
@@ -13,17 +41,33 @@ body {
     display: none;
 }
 
-#modal-content {
-    background: white;
-    margin: 100px auto;
-    padding: 20px;
-    width: 300px;
-    position: relative;
+#modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#close-button {
+#modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 300px;
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.close-button {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 15px;
+    font-size: 1.8em;
+    font-weight: bold;
     cursor: pointer;
 }
