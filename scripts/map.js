@@ -77,6 +77,10 @@ function openModal(station) {
     document.getElementById("modal-text").textContent = text;
     document.getElementById("modal").classList.add("show");
 }
+// Додаємо обробник події для кнопки хрестика
+document.getElementById("close-modal").addEventListener("click", () => {
+    document.getElementById("modal").classList.remove("show");
+});
 
 function closeModal(event) {
     if (event.target.id === "modal" || event.target.id === "close-modal") {
