@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ніч у Вифлеємі</title>
+    <title>Ніч у Вифлеємі - Інтерактивна карта</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Інтерактивна Карта "Ніч у Вифлеємі"</h1>
         <div id="language-buttons">
-            <button id="btn-uk">Українська</button>
-            <button id="btn-en">English</button>
+            <button id="btn-uk" onclick="switchLanguage('uk')">Українська</button>
+            <button id="btn-en" onclick="switchLanguage('en')">English</button>
         </div>
     </header>
 
@@ -32,7 +32,7 @@
     <div id="modal" class="hidden">
         <div id="modal-content">
             <span id="close-modal" onclick="closeModal()">&times;</span>
-            <img id="modal-image" src="" alt="Mission Image">
+            <img id="modal-image" src="" alt="Image">
             <p id="modal-text"></p>
         </div>
     </div>
