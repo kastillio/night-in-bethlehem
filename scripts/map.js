@@ -68,6 +68,13 @@ function updateText() {
         button.textContent = textData[currentLanguage][id];
     });
 }
+function updateText() {
+    document.getElementById("title").textContent = textData[currentLanguage].title;
+    document.querySelectorAll(".location-button").forEach(button => {
+        const id = button.getAttribute("onclick").match(/'(\w+)'/)[1];
+        button.textContent = textData[currentLanguage][id] || id;
+    });
+}
 
 function openModal(station) {
     const imgSrc = `images/${station}.png`;
