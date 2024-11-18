@@ -3,40 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ніч у Вифлеємі - Інтерактивна карта</title>
+    <title>Night in Bethlehem</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1 id="title">Інтерактивна Карта "Ніч у Вифлеємі"</h1>
-        <div id="language-buttons">
-            <button id="btn-uk" onclick="switchLanguage('uk')">Українська</button>
-            <button id="btn-en" onclick="switchLanguage('en')">English</button>
-        </div>
-    </header>
-
-    <div id="location-list">
-        <button class="location-button" onclick="openModal('shepherds')">Пастухи</button>
-        <button class="location-button" onclick="openModal('registration')">Реєстрація</button>
-        <button class="location-button" onclick="openModal('carpenter')">Цех тесляра</button>
-        <button class="location-button" onclick="openModal('scribe')">Намет писаря</button>
-        <button class="location-button" onclick="openModal('well')">Вифлеємська криниця</button>
-        <button class="location-button" onclick="openModal('bakery')">Пекарня</button>
-        <button class="location-button" onclick="openModal('spices')">Магазин спецій</button>
-        <button class="location-button" onclick="openModal('wise-men')">Мудреці</button>
-        <button class="location-button" onclick="openModal('stable')">Стайня</button>
-        <button class="location-button" onclick="openModal('photo-zone')">Фотозона</button>
+    <h1 id="title">Інтерактивна Карта "Ніч у Вифлеємі"</h1>
+    <div id="language-buttons">
+        <button onclick="switchLanguage('uk')">Українська</button>
+        <button onclick="switchLanguage('en')">English</button>
     </div>
 
-    <!-- Модальне вікно -->
-    <div id="modal" class="hidden" onclick="closeModal(event)">
-        <div id="modal-content" onclick="event.stopPropagation()">
-            <span id="close-modal" class="close-button" onclick="closeModal()">&times;</span>
-            <img id="modal-image" src="" alt="Station Image" class="modal-img">
+    <div id="location-list">
+        <button onclick="openModal('shepherds')">Пастухи</button>
+        <button onclick="openModal('bakery')">Пекарня</button>
+        <button onclick="openModal('wise-men')">Мудреці</button>
+    </div>
+
+    <div id="modal" onclick="closeModal(event)">
+        <div id="modal-content">
+            <span id="close-button" onclick="closeModal(event)">&times;</span>
+            <img id="modal-image" src="" alt="Image">
             <p id="modal-text"></p>
         </div>
     </div>
 
-    <script src="scripts/map.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
