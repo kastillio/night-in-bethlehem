@@ -59,7 +59,9 @@ img {
 
 /* Футер */
 footer {
-    margin-top: 20px;
-    font-size: 0.8em;
+    margin-top: 40px;
+    padding: 10px;
     color: #ccc;
+    font-size: 0.9em;
 }
+
