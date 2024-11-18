@@ -10,6 +10,8 @@ header {
 
 #language-buttons button {
     margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 #location-list {
@@ -27,11 +29,6 @@ header {
     border-radius: 10px;
     font-size: 1.2em;
     cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.location-button:hover {
-    background-color: #ffd700;
 }
 
 #modal {
@@ -45,16 +42,21 @@ header {
     justify-content: center;
     align-items: center;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s;
+}
+
+#modal.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 #modal-content {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
-    position: relative;
     max-width: 300px;
+    text-align: center;
 }
 
 #modal-image {
@@ -69,13 +71,4 @@ header {
     right: 10px;
     font-size: 1.5em;
     cursor: pointer;
-}
-
-.hidden {
-    display: none;
-}
-
-.show {
-    display: flex;
-    opacity: 1;
 }
