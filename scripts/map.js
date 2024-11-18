@@ -1,3 +1,5 @@
+let currentLanguage = "uk"; // Встановлюємо українську мову за замовчуванням
+
 const languageData = {
     uk: {
         title: 'Інтерактивна Карта "Ніч у Вифлеємі"',
@@ -54,25 +56,16 @@ const descriptions = {
     }
 };
 
-let currentLanguage = "en";
-
 function switchLanguage(language) {
     currentLanguage = language;
     updateText();
 }
-function closeModal() {
-    const modal = document.getElementById("modal");
-    modal.classList.remove("show");
-}
 
 function updateText() {
-    // Змінюємо заголовок
     document.getElementById("title").textContent = languageData[currentLanguage].title;
-
-    // Оновлюємо текст кнопок
     document.querySelectorAll(".location-button").forEach(button => {
-        const id = button.getAttribute("onclick").match(/'([\w-]+)'/)[1];
-        button.textContent = languageData[currentLanguage][id] || id;
+        const id = button.getAttribute("onclick").match(/'(\w+)'/)[1];
+        button.textContent = languageData[currentLanguage][id];
     });
 }
 
@@ -81,25 +74,18 @@ function openModal(station) {
     const img = document.getElementById("modal-image");
     const text = document.getElementById("modal-text");
 
-    // Встановлюємо зображення та текст модального вікна
     img.src = `images/${station}.png`;
     text.textContent = descriptions[currentLanguage][station];
 
-    // Відображаємо модальне вікно
     modal.classList.add("show");
 }
 
-function closeModal() {
+function closeModal(event) {
     const modal = document.getElementById("modal");
-    modal.classList.remove("show");
-}
-
-// Додаємо подію закриття модального вікна при натисканні поза вмістом
-document.getElementById("modal").addEventListener("click", (event) => {
-    if (event.target.id === "modal") {
-        closeModal();
+    if (event.target === modal || event.target.id === "close-modal") {
+        modal.classList.remove("show");
     }
-});
+}
 
 // Ініціалізуємо текст при завантаженні сторінки
 updateText();
