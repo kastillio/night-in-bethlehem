@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ніч у Вифлеємі - Інтерактивна карта</title>
+    <title>Ніч у Вифлеємі</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1 id="title">Ніч у Вифлеємі</h1>
-        <button id="language-toggle">EN</button>
+        <h1>Інтерактивна Карта "Ніч у Вифлеємі"</h1>
+        <div id="language-buttons">
+            <button id="btn-uk">Українська</button>
+            <button id="btn-en">English</button>
+        </div>
     </header>
 
-    <div id="map-container">
-        <img src="images/map-background.jpg" alt="Фон карти" id="map-background">
-        <div class="location" id="stable" onclick="startMission('stable')">
-            <img src="images/stable.png" alt="Ясла">
-        </div>
-        <div class="location" id="shepherds" onclick="startMission('shepherds')">
-            <img src="images/shepherds.png" alt="Пастухи">
-        </div>
-        <div class="location" id="market" onclick="startMission('market')">
-            <img src="images/market.png" alt="Ринок">
-        </div>
-        <div class="location" id="star" onclick="startMission('star')">
-            <img src="images/star.png" alt="Зірка Вифлеєму">
+    <div id="location-list">
+        <button class="location-button" onclick="openModal('shepherds')">Пастухи</button>
+        <button class="location-button" onclick="openModal('registration')">Реєстрація</button>
+        <button class="location-button" onclick="openModal('carpenter')">Цех тесляра</button>
+        <button class="location-button" onclick="openModal('scribe')">Намет писаря</button>
+        <button class="location-button" onclick="openModal('well')">Вифлеємська криниця</button>
+        <button class="location-button" onclick="openModal('bakery')">Пекарня</button>
+        <button class="location-button" onclick="openModal('spices')">Магазин спецій</button>
+        <button class="location-button" onclick="openModal('wise-men')">Мудреці</button>
+        <button class="location-button" onclick="openModal('stable')">Стайня</button>
+        <button class="location-button" onclick="openModal('photo-zone')">Фотозона</button>
+    </div>
+
+    <!-- Модальне вікно -->
+    <div id="modal" class="hidden">
+        <div id="modal-content">
+            <span id="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Mission Image">
+            <p id="modal-text"></p>
         </div>
     </div>
 
-    <div id="modal" class="hidden">
-        <div id="modal-content">
-            <img id="modal-image" src="" alt="Mission Image">
-            <p id="mission-text"></p>
-           
+    <script src="scripts/map.js"></script>
+</body>
+</html>
