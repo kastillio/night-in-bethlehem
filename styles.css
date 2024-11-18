@@ -56,12 +56,13 @@ header {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    position: relative;
     max-width: 300px;
+    position: relative;
 }
 
-#modal-image {
+.modal-img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
 }
