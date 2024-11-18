@@ -72,15 +72,25 @@ body {
 /* Стиль для кнопки-хрестика */
 .close-button {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 15px;
     font-size: 1.8em;
     cursor: pointer;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.8);
     border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #333;
+    transition: transform 0.2s, background 0.2s;
 }
 
 .close-button:hover {
+    background: rgba(255, 255, 255, 1);
     color: #ff0000;
+    transform: scale(1.2);
 }
+
