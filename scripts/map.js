@@ -1,46 +1,60 @@
-const language = {
-    uk: {
-        title: "Ніч у Вифлеємі",
-        missions: {
-            stable: "Відвідайте ясла та знайдіть дари для Ісуса.",
-            shepherds: "Зустріньте пастухів і дізнайтеся, що вони бачили.",
-            market: "Знайдіть на ринку дари для Ісуса.",
-            star: "Слідуйте за зіркою, щоб знайти місце народження Ісуса."
-        }
+const locations = {
+    shepherds: {
+        img: "images/shepherds.png",
+        text: "Ви зустріли пастухів, які бачили ангела, що сповістив їм про народження Ісуса."
     },
-    en: {
-        title: "Night in Bethlehem",
-        missions: {
-            stable: "Visit the stable and find gifts for Jesus.",
-            shepherds: "Meet the shepherds and learn what they saw.",
-            market: "Find gifts for Jesus at the market.",
-            star: "Follow the star to find the birthplace of Jesus."
-        }
+    registration: {
+        img: "images/registration.png",
+        text: "Зареєструйтесь для участі у заході та отримайте свій сес-код."
+    },
+    carpenter: {
+        img: "images/carpenter.png",
+        text: "Цех тесляра, де ви можете побачити, як виготовляються дерев'яні вироби."
+    },
+    scribe: {
+        img: "images/scribe.png",
+        text: "Намет писаря, де ви можете написати послання для Ісуса."
+    },
+    well: {
+        img: "images/well.png",
+        text: "Вифлеємська криниця, де люди приходять набирати воду."
+    },
+    bakery: {
+        img: "images/bakery.png",
+        text: "Пекарня, де ви можете скуштувати свіжий хліб."
+    },
+    spices: {
+        img: "images/spices.png",
+        text: "Магазин спецій, наповнений ароматними травами та спеціями."
+    },
+    "wise-men": {
+        img: "images/wise-men.png",
+        text: "Мудреці, які прийшли поклонитися новонародженому цареві."
+    },
+    stable: {
+        img: "images/stable.png",
+        text: "Стайня, де народився Ісус."
+    },
+    "photo-zone": {
+        img: "images/photo-zone.png",
+        text: "Фотозона, де ви можете зробити пам'ятне фото."
     }
 };
 
-let currentLanguage = "uk";
+function openModal(location) {
+    const modal = document.getElementById("modal");
+    const img = document.getElementById("modal-image");
+    const text = document.getElementById("modal-text");
 
-document.getElementById("language-toggle").addEventListener("click", () => {
-    currentLanguage = currentLanguage === "uk" ? "en" : "uk";
-    updateLanguage();
-});
+    img.src = locations[location].img;
+    text.textContent = locations[location].text;
 
-function updateLanguage() {
-    document.getElementById("title").textContent = language[currentLanguage].title;
-}
-
-function startMission(location) {
-    const missionText = language[currentLanguage].missions[location];
-    const modalImageSrc = `images/${location}.png`;
-
-    document.getElementById("modal-image").src = modalImageSrc;
-    document.getElementById("mission-text").textContent = missionText;
-    document.getElementById("modal").classList.remove("hidden");
+    modal.classList.add("show");
+    modal.classList.remove("hidden");
 }
 
 function closeModal() {
-    document.getElementById("modal").classList.add("hidden");
+    const modal = document.getElementById("modal");
+    modal.classList.remove("show");
+    modal.classList.add("hidden");
 }
-
-updateLanguage();
