@@ -40,13 +40,13 @@ img {
 
 /* Кнопки */
 .child-button {
-    font-size: 1.2em;
-    padding: 15px 30px;
+    font-size: 1.4em;
+    padding: 15px 35px;
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: #ff5722;
     color: #fff;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -55,6 +55,7 @@ img {
     transform: scale(1.1);
     background-color: #ff7043;
 }
+
 
 /* Футер */
 footer {
