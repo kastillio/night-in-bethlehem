@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Night in Bethlehem</title>
+    <title>Ніч у Вифлеємі - Інтерактивна карта</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 id="title">Інтерактивна Карта "Ніч у Вифлеємі"</h1>
-    <div id="language-buttons">
-        <button onclick="switchLanguage('uk')">Українська</button>
-        <button onclick="switchLanguage('en')">English</button>
-    </div>
+    <header>
+        <h1 id="title">Інтерактивна Карта "Ніч у Вифлеємі"</h1>
+        <div id="language-buttons">
+            <button id="btn-uk" onclick="switchLanguage('uk')">Українська</button>
+            <button id="btn-en" onclick="switchLanguage('en')">English</button>
+        </div>
+    </header>
 
     <div id="location-list">
-        <button onclick="openModal('shepherds')">Пастухи</button>
-        <button onclick="openModal('bakery')">Пекарня</button>
-        <button onclick="openModal('wise-men')">Мудреці</button>
+        <button class="location-button" onclick="openModal('shepherds')">Пастухи</button>
+        <button class="location-button" onclick="openModal('bakery')">Пекарня</button>
+        <button class="location-button" onclick="openModal('wise-men')">Мудреці</button>
     </div>
 
-    <div id="modal" onclick="closeModal(event)">
-        <div id="modal-content">
-            <span id="close-button" onclick="closeModal(event)">&times;</span>
-            <img id="modal-image" src="" alt="Image">
+    <!-- Модальне вікно -->
+    <div id="modal" class="hidden" onclick="closeModal(event)">
+        <div id="modal-content" onclick="event.stopPropagation()">
+            <span id="close-modal" class="close-button" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Image" class="modal-img">
             <p id="modal-text"></p>
         </div>
     </div>
