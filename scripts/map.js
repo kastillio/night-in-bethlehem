@@ -83,5 +83,15 @@ function closeModal(event) {
         document.getElementById("modal").classList.remove("show");
     }
 }
+// Виправлена функція для закриття модального вікна
+function closeModal(event) {
+    const modal = document.getElementById("modal");
+    const closeButton = document.getElementById("close-modal");
+
+    // Перевіряємо, чи натиснуто хрестик або клацнуто поза модальним вікном
+    if (event.target === modal || event.target === closeButton) {
+        modal.classList.remove("show");
+    }
+}
 
 document.addEventListener("DOMContentLoaded", updateText);
