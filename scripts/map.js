@@ -1,91 +1,20 @@
-let currentLanguage = "uk"; // Встановлюємо українську мову за замовчуванням
-
-const languageData = {
-    uk: {
-        title: 'Інтерактивна Карта "Ніч у Вифлеємі"',
-        shepherds: "Пастухи",
-        registration: "Реєстрація",
-        carpenter: "Цех тесляра",
-        scribe: "Намет писаря",
-        well: "Вифлеємська криниця",
-        bakery: "Пекарня",
-        spices: "Магазин спецій",
-        "wise-men": "Мудреці",
-        stable: "Стайня",
-        "photo-zone": "Фотозона"
-    },
-    en: {
-        title: 'Interactive Map "Night in Bethlehem"',
-        shepherds: "Shepherds",
-        registration: "Registration",
-        carpenter: "Carpenter",
-        scribe: "Scribe",
-        well: "Bethlehem Well",
-        bakery: "Bakery",
-        spices: "Spice Market",
-        "wise-men": "Wise Men",
-        stable: "Stable",
-        "photo-zone": "Photo Zone"
-    }
-};
-
-const descriptions = {
-    uk: {
-        shepherds: "Зустріньте пастухів і дізнайтеся про їх історію.",
-        registration: "Дізнайтеся про перепис римлян і зареєструйтеся.",
-        carpenter: "Дізнайтеся про ремесло тесляра та його інструменти.",
-        scribe: "Відвідайте намет писаря і дізнайтеся про його записи.",
-        well: "Відвідайте відому криницю Вифлеєма та дізнайтеся про її значення.",
-        bakery: "Завітайте до пекарні та відчуйте аромат свіжого хліба.",
-        spices: "Загляньте в магазин спецій та відчуйте різні аромати.",
-        "wise-men": "Зустріньте мудреців, які принесли подарунки.",
-        stable: "Зайдіть у стайню і дізнайтеся про народження Ісуса.",
-        "photo-zone": "Зробіть пам'ятне фото у фотозоні."
-    },
-    en: {
-        shepherds: "Meet the shepherds and learn about their story.",
-        registration: "Learn about the Roman census and register.",
-        carpenter: "Discover the carpenter's craft and tools.",
-        scribe: "Visit the scribe's tent and learn about his records.",
-        well: "Visit the famous Bethlehem well and learn its importance.",
-        bakery: "Stop by the bakery and smell the fresh bread.",
-        spices: "Explore the spice market and its aromas.",
-        "wise-men": "Meet the wise men who brought gifts.",
-        stable: "Step into the stable and learn about Jesus' birth.",
-        "photo-zone": "Take a memorable photo in the photo zone."
-    }
-};
-
-function switchLanguage(language) {
-    currentLanguage = language;
-    updateText();
+.modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-function updateText() {
-    document.getElementById("title").textContent = languageData[currentLanguage].title;
-    document.querySelectorAll(".location-button").forEach(button => {
-        const id = button.getAttribute("onclick").match(/'(\w+)'/)[1];
-        button.textContent = languageData[currentLanguage][id];
-    });
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
 }
 
-function openModal(station) {
-    const modal = document.getElementById("modal");
-    const img = document.getElementById("modal-image");
-    const text = document.getElementById("modal-text");
-
-    img.src = `images/${station}.png`;
-    text.textContent = descriptions[currentLanguage][station];
-
-    modal.classList.add("show");
+.close-button:hover {
+    color: #ff0000;
 }
-
-function closeModal(event) {
-    const modal = document.getElementById("modal");
-    if (event.target === modal || event.target.id === "close-modal") {
-        modal.classList.remove("show");
-    }
-}
-
-// Ініціалізуємо текст при завантаженні сторінки
-updateText();
