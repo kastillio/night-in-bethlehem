@@ -3,34 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ніч у Вифлеємі</title>
+    <title>Ніч у Вифлеємі - Інтерактивна карта</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Ніч у Вифлеємі</h1>
-    </header>
-
-    <main>
-        <section id="about">
-            <h2>Про захід</h2>
-            <p>Запрошуємо дітей та їх батьків на захопливу подорож до Вифлеєму! Приходьте та дізнайтеся про історію народження Ісуса Христа.</p>
-            <img src="images/bethlehem-scene.png" alt="Сцена Вифлеєму">
-        </section>
-
-        <section id="register">
-            <h2>Реєстрація</h2>
-            <button class="child-button" onclick="window.location.href='register.html'">Зареєструватися</button>
-        </section>
-
-        <section id="contact">
-            <h2>Контакти</h2>
-            <p>Якщо у вас є питання, звертайтесь за номером: <strong>437-339-1127</strong></p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Ніч у Вифлеємі</p>
-    </footer>
+    <h1>Ніч у Вифлеємі: Інтерактивна карта</h1>
+    <div id="map-container">
+        <img src="images/map-background.jpg" alt="Фон карти" id="map-background">
+        <div class="location" id="stable" onclick="startMission('stable')">
+            <img src="images/stable.png" alt="Ясла">
+        </div>
+        <div class="location" id="shepherds" onclick="startMission('shepherds')">
+            <img src="images/shepherds.png" alt="Пастухи">
+        </div>
+        <div class="location" id="market" onclick="startMission('market')">
+            <img src="images/market.png" alt="Ринок">
+        </div>
+        <div class="location" id="star" onclick="startMission('star')">
+            <img src="images/star.png" alt="Зірка Вифлеєму">
+        </div>
+    </div>
+    <script src="scripts/map.js"></script>
 </body>
 </html>
