@@ -60,6 +60,10 @@ function switchLanguage(language) {
     currentLanguage = language;
     updateText();
 }
+function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.classList.remove("show");
+}
 
 function updateText() {
     // Змінюємо заголовок
