@@ -18,6 +18,40 @@ body {
     gap: 10px;
     z-index: 1000;
 }
+.station-image {
+    width: 150px; /* Фіксована ширина */
+    height: 150px; /* Фіксована висота */
+    object-fit: cover; /* Адаптація зображення */
+    border-radius: 10px; /* Заокруглені краї */
+}
+@media (max-width: 768px) {
+    .station-image {
+        width: 120px;
+        height: 120px;
+    }
+    .station-item {
+        width: 140px;
+        height: 180px;
+    }
+}
+
+.station-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    height: 220px;
+    margin: 10px; /* Проміжки між кнопками */
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+.station-item:hover {
+    transform: scale(1.05); /* Ефект збільшення при наведенні */
+}
 
 /* Стилізація заголовка */
 h1 {
