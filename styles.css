@@ -11,6 +11,13 @@ body {
 #language-buttons {
     margin-bottom: 20px;
 }
+body {
+    background-image: url('path_to_your_image/stars-background-optimized.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
 
 #location-list {
     max-width: 400px;
