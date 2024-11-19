@@ -185,7 +185,7 @@ function changeLanguage(lang) {
     });
 
     // Оновлення заголовка сторінки
-    const title = document.getElementById('camp-title');
+    const title = document.getElementById('page-title');
     title.textContent = currentLanguage === 'uk' 
         ? 'Інтерактивна Карта "Ніч у Вифлеємі"' 
         : 'Interactive Map "Night in Bethlehem"';
@@ -211,7 +211,7 @@ function changeLanguage(lang) {
     });
 
     // Оновлення заголовка сторінки
-    const titleContainer = document.getElementById('page-title-container');
+    const titleContainer = document.getElementById('page-title');
     const imageElement = titleContainer.querySelector('img');
 
     if (imageElement) {
