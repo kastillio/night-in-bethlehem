@@ -32,8 +32,8 @@ const textData = {
 const descriptions = {
     uk: {
         shepherds: "Пастухи були першими, хто почув Добру Новину. Вони розкажуть вам, що саме вони побачили на зоряному небі тієї дивовижної ночі, коли народилося диво. Дізнайтеся, чому Бог обрав саме їх!",
-        registration: "Дізнайтеся про перепис римлян.",
-        carpenter: "Відвідайте майстерню тесляра.",
+        registration: «Відвідайте реєстрацію перепису населення та дізнайтеся, чому Йосип і Марія поїхали до Віфлеєму. Що було унікального в цьому переписі?»,
+        carpenter: «Знайомтеся з майстром, який працює з деревом. Які секрети приховує його ремесло?»,
         scribe: "Відвідайте намет писаря.",
         well: "Скуштуйте воду з криниці.",
         bakery: "Відчуйте аромат хліба.",
@@ -43,9 +43,9 @@ const descriptions = {
         "photo-zone": "Зробіть фото на пам'ять."
     },
     en: {
-        shepherds: "Meet the shepherds who witnessed the miracle.",
-        registration: "Learn about the Roman census.",
-        carpenter: "Visit the carpenter's workshop.",
+        shepherds: "The shepherds were the first to hear the Good News. Find out what they saw in the sky that special night and why God chose them!",
+        registration: "Visit the census registration and discover why Joseph and Mary traveled to Bethlehem. What was unique about this census?",
+        carpenter: "Meet the craftsman who works with wood. What secrets does his craft hold?",
         scribe: "See the scribe's tent.",
         well: "Taste the water from the well.",
         bakery: "Smell the fresh bread.",
