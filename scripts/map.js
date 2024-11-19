@@ -1,29 +1,30 @@
 const textData = {
     uk: {
-        shepherds: { name: "Пастухи", description: "Дізнайтеся, що побачили пастухи тієї ночі." },
-        registration: { name: "Реєстрація", description: "Дізнайтеся, чому Йосип і Марія прийшли до Вифлеєму." },
-        carpenter: { name: "Цех тесляра", description: "Познайомтеся з тесляром і його роботою." },
-        scribe: { name: "Намет писаря", description: "Дізнайтеся значення імені Ісус." },
-        well: { name: "Вифлеємська криниця", description: "Дізнайтеся про важливість води." },
-        bakery: { name: "Пекарня", description: "Побачте, як випікають хліб." },
-        spices: { name: "Магазин спецій", description: "Відкрийте аромат спецій." },
-        wise-men: { name: "Мудреці", description: "Дізнайтеся, що принесли мудреці." },
-        stable: { name: "Стайня", description: "Дізнайтеся історію про Йосипа і Марію." },
-        photo-zone: { name: "Фотозона", description: "Зробіть пам'ятне фото." }
+        'shepherds': { name: "Пастухи", description: "Дізнайтеся, що побачили пастухи тієї ночі." },
+        'registration': { name: "Реєстрація", description: "Дізнайтеся, чому Йосип і Марія прийшли до Вифлеєму." },
+        'carpenter': { name: "Цех тесляра", description: "Познайомтеся з тесляром і його роботою." },
+        'scribe': { name: "Намет писаря", description: "Дізнайтеся значення імені Ісус." },
+        'well': { name: "Вифлеємська криниця", description: "Дізнайтеся про важливість води." },
+        'bakery': { name: "Пекарня", description: "Побачте, як випікають хліб." },
+        'spice-market': { name: "Магазин спецій", description: "Відкрийте аромат спецій." },
+        'wise-men': { name: "Мудреці", description: "Дізнайтеся, що принесли мудреці." },
+        'stable': { name: "Стайня", description: "Дізнайтеся історію про Йосипа і Марію." },
+        'photo-zone': { name: "Фотозона", description: "Зробіть пам'ятне фото." }
     },
     en: {
-        shepherds: { name: "Shepherds", description: "Find out what the shepherds saw that night." },
-        registration: { name: "Registration", description: "Learn why Joseph and Mary came to Bethlehem." },
-        carpenter: { name: "Carpenter's Workshop", description: "Meet the carpenter and his work." },
-        scribe: { name: "Scribe's Tent", description: "Discover the meaning of the name Jesus." },
-        well: { name: "Bethlehem Well", description: "Learn the importance of water." },
-        bakery: { name: "Bakery", description: "See how bread is baked." },
-        spices: { name: "Spice Market", description: "Explore the aroma of spices." },
-        wisem-men: { name: "Wise Men", description: "Find out what gifts the wise men brought." },
-        stable: { name: "Stable", description: "Learn the story of Joseph and Mary." },
-        photo-zone: { name: "Photo Zone", description: "Take a memorable photo." }
+        'shepherds': { name: "Shepherds", description: "Find out what the shepherds saw that night." },
+        'registration': { name: "Registration", description: "Learn why Joseph and Mary came to Bethlehem." },
+        'carpenter': { name: "Carpenter's Workshop", description: "Meet the carpenter and his work." },
+        'scribe': { name: "Scribe's Tent", description: "Discover the meaning of the name Jesus." },
+        'well': { name: "Bethlehem Well", description: "Learn the importance of water." },
+        'bakery': { name: "Bakery", description: "See how bread is baked." },
+        'spice-market': { name: "Spice Market", description: "Explore the aroma of spices." },
+        'wise-men': { name: "Wise Men", description: "Find out what gifts the wise men brought." },
+        'stable': { name: "Stable", description: "Learn the story of Joseph and Mary." },
+        'photo-zone': { name: "Photo Zone", description: "Take a memorable photo." }
     }
 };
+
 
 // Поточна мова
 let currentLanguage = 'uk'; // За замовчуванням українська
