@@ -51,9 +51,7 @@ const descriptions = {
         bakery: "Smell the aroma of freshly baked bread. How was bread made in ancient times, and why was it so essential?",
         spices:"Dive into the world of scents and flavors. What could spices reveal about the people who used them?",
         "wise-men": "Meet the wise men who traveled from afar. What gifts did they bring, and why were they significant?",
-        stable:"Discover what the place looked like where the Child was born. Why did a stable become the cradle of the miracle?"
-
-,
+        stable:"Discover what the place looked like where the Child was born. Why did a stable become the cradle of the miracle?",
         "photo-zone": "Take a picture that will capture this special moment forever!"
     }
 };
