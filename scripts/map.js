@@ -132,6 +132,25 @@ function changeLanguage(lang) {
             : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
     }
 }
+function openModal(station) {
+    const imgSrc = `images/${station}.png`;
+    const description = textData[currentLanguage][station]?.description || "Опис недоступний";
+
+    // Додаємо зображення та опис у модальне вікно
+    document.getElementById("modal-image").src = imgSrc;
+    document.getElementById("modal-text").textContent = description;
+
+    // Встановлюємо поточну станцію для кнопки "Пройдено"
+    document.getElementById("modal").dataset.station = station;
+
+    const completeButton = document.getElementById("complete-button");
+    completeButton.textContent = stationStatus[station]
+        ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+        : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
+
+    // Відображення модального вікна
+    document.getElementById("modal").classList.add("show");
+}
 
 // Перемикання статусу станції
 let stationStatus = {};
