@@ -92,7 +92,7 @@ body {
     background-color: #c8e6c9; /* Тьмяний зелений */
     border-color: #388e3c; /* Темно-зелений бордер */
     opacity: 0.6; /* Прозорість кнопки */
-    pointer-events: none; /* Вимкнення можливості натискати */
+    pointer-events: auto; /* Вимкнення можливості натискати */
 }
 
 .station-item.completed:hover {
