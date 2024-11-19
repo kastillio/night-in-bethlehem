@@ -4,24 +4,24 @@ const textData = {
         registration: { name: "Реєстрація", description: "Дізнайтеся, чому Йосип і Марія прийшли до Вифлеєму." },
         carpenter: { name: "Цех тесляра", description: "Познайомтеся з тесляром і його роботою." },
         scribe: { name: "Намет писаря", description: "Дізнайтеся значення імені Ісус." },
-        bethlehemWell: { name: "Вифлеємська криниця", description: "Дізнайтеся про важливість води." },
+        well: { name: "Вифлеємська криниця", description: "Дізнайтеся про важливість води." },
         bakery: { name: "Пекарня", description: "Побачте, як випікають хліб." },
-        spiceMarket: { name: "Магазин спецій", description: "Відкрийте аромат спецій." },
-        wiseMen: { name: "Мудреці", description: "Дізнайтеся, що принесли мудреці." },
+        spices: { name: "Магазин спецій", description: "Відкрийте аромат спецій." },
+        wise-men: { name: "Мудреці", description: "Дізнайтеся, що принесли мудреці." },
         stable: { name: "Стайня", description: "Дізнайтеся історію про Йосипа і Марію." },
-        photoZone: { name: "Фотозона", description: "Зробіть пам'ятне фото." }
+        photo-zone: { name: "Фотозона", description: "Зробіть пам'ятне фото." }
     },
     en: {
         shepherds: { name: "Shepherds", description: "Find out what the shepherds saw that night." },
         registration: { name: "Registration", description: "Learn why Joseph and Mary came to Bethlehem." },
         carpenter: { name: "Carpenter's Workshop", description: "Meet the carpenter and his work." },
         scribe: { name: "Scribe's Tent", description: "Discover the meaning of the name Jesus." },
-        bethlehemWell: { name: "Bethlehem Well", description: "Learn the importance of water." },
+        well: { name: "Bethlehem Well", description: "Learn the importance of water." },
         bakery: { name: "Bakery", description: "See how bread is baked." },
-        spiceMarket: { name: "Spice Market", description: "Explore the aroma of spices." },
-        wiseMen: { name: "Wise Men", description: "Find out what gifts the wise men brought." },
+        spices: { name: "Spice Market", description: "Explore the aroma of spices." },
+        wisem-men: { name: "Wise Men", description: "Find out what gifts the wise men brought." },
         stable: { name: "Stable", description: "Learn the story of Joseph and Mary." },
-        photoZone: { name: "Photo Zone", description: "Take a memorable photo." }
+        photo-zone: { name: "Photo Zone", description: "Take a memorable photo." }
     }
 };
 
