@@ -111,6 +111,10 @@ function toggleCompletion() {
 
     // Змінюємо статус станції
     stationStatus[station] = !stationStatus[station];
+const completeButton = document.getElementById('complete-button');
+completeButton.textContent = stationStatus[station]
+    ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+    : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
 
     // Оновлення тексту кнопки в модальному вікні
     const completeButton = document.getElementById("complete-button");
