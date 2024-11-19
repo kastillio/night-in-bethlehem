@@ -174,6 +174,33 @@ function toggleCompletion() {
 
 // Перемикання статусу станції
 let stationStatus = {};
+function changeLanguage(lang) {
+    currentLanguage = lang;
+
+    // Оновлення текстів на кнопках станцій
+    document.querySelectorAll('.station-item').forEach(button => {
+        const station = button.getAttribute('onclick').match(/'(.+)'/)[1];
+        const stationText = textData[currentLanguage][station]?.name || "Unknown";
+        button.querySelector('.station-label').textContent = stationText;
+    });
+
+    // Оновлення заголовка сторінки
+    const title = document.getElementById('camp-title');
+    title.textContent = currentLanguage === 'uk' 
+        ? 'Інтерактивна Карта "Ніч у Вифлеємі"' 
+        : 'Interactive Map "Night in Bethlehem"';
+
+    // Якщо модальне вікно відкрите, оновити текст кнопки "Пройдено"/"Completed"
+    const modal = document.getElementById('modal');
+    if (modal.classList.contains('show')) {
+        const station = modal.dataset.station;
+        const completeButton = document.getElementById("complete-button");
+        completeButton.textContent = stationStatus[station]
+            ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+            : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
+    }
+}
+
 function toggleCompletion() {
     const station = document.getElementById("modal").dataset.station;
     const button = document.querySelector(`.station-item[onclick="openModal('${station}')"]`);
@@ -181,10 +208,11 @@ function toggleCompletion() {
     // Змінюємо статус станції
     stationStatus[station] = !stationStatus[station];
 
-
     // Оновлення тексту кнопки в модальному вікні
     const completeButton = document.getElementById("complete-button");
-    completeButton.textContent = stationStatus[station] ? "Зняти галочку" : "Пройдено";
+    completeButton.textContent = stationStatus[station]
+        ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+        : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
 
     // Оновлення вигляду кнопки станції
     if (stationStatus[station]) {
@@ -193,3 +221,4 @@ function toggleCompletion() {
         button.classList.remove("completed");
     }
 }
+
