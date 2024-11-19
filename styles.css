@@ -26,6 +26,14 @@ body {
     cursor: pointer;
     z-index: 10;
 }
+/* Заголовок сторінки */
+#page-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #ffffff; /* Білий текст */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Тінь для кращої видимості */
+    margin-top: 20px;
+}
 
 #language-buttons button:hover {
     background-color: #dcdcdc;
