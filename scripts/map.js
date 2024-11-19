@@ -6,7 +6,7 @@ const textData = {
         'scribe': { name: "Намет писаря", description: "Дізнайтеся значення імені Ісус." },
         'well': { name: "Вифлеємська криниця", description: "Дізнайтеся про важливість води." },
         'bakery': { name: "Пекарня", description: "Побачте, як випікають хліб." },
-        'spice-market': { name: "Магазин спецій", description: "Відкрийте аромат спецій." },
+        'spices': { name: "Магазин спецій", description: "Відкрийте аромат спецій." },
         'wise-men': { name: "Мудреці", description: "Дізнайтеся, що принесли мудреці." },
         'stable': { name: "Стайня", description: "Дізнайтеся історію про Йосипа і Марію." },
         'photo-zone': { name: "Фотозона", description: "Зробіть пам'ятне фото." }
@@ -18,7 +18,7 @@ const textData = {
         'scribe': { name: "Scribe's Tent", description: "Discover the meaning of the name Jesus." },
         'well': { name: "Bethlehem Well", description: "Learn the importance of water." },
         'bakery': { name: "Bakery", description: "See how bread is baked." },
-        'spice-market': { name: "Spice Market", description: "Explore the aroma of spices." },
+        'spices': { name: "Spice Market", description: "Explore the aroma of spices." },
         'wise-men': { name: "Wise Men", description: "Find out what gifts the wise men brought." },
         'stable': { name: "Stable", description: "Learn the story of Joseph and Mary." },
         'photo-zone': { name: "Photo Zone", description: "Take a memorable photo." }
