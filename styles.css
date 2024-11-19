@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 20px; /* Збільшує відступ між кнопками і наступним елементом */
-    z-index: 10; /* Забезпечує, що кнопки завжди зверху */
+    z-index: 4; /* Забезпечує, що кнопки завжди зверху */
 }
 
 #language-buttons button {
