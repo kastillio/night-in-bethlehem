@@ -18,6 +18,27 @@ body {
     background-attachment: fixed;
     background-position: center;
 }
+#language-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Збільшує відступ між кнопками і наступним елементом */
+    z-index: 10; /* Забезпечує, що кнопки завжди зверху */
+}
+
+#language-buttons button {
+    margin: 0 10px; /* Відстань між кнопками */
+    padding: 10px 20px; /* Внутрішній відступ для кнопок */
+    font-size: 16px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#language-buttons button:hover {
+    background-color: #dcdcdc;
+}
 
 #location-list {
     max-width: 400px;
