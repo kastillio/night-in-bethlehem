@@ -9,10 +9,11 @@ body {
 }
 
 #language-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px; /* Збільшує відступ між кнопками і наступним елементом */
-    z-index: 4; /* Забезпечує, що кнопки завжди зверху */
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Завжди буде вище за модальне вікно */
 }
 
 #language-buttons button {
