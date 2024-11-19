@@ -89,9 +89,16 @@ body {
 }
 
 .station-item.completed {
-    background-color: #c8e6c9;
-    border-color: #388e3c;
+    background-color: #c8e6c9; /* Тьмяний зелений */
+    border-color: #388e3c; /* Темно-зелений бордер */
+    opacity: 0.6; /* Прозорість кнопки */
+    pointer-events: none; /* Вимкнення можливості натискати */
 }
+
+.station-item.completed:hover {
+    transform: none; /* Забираємо ефект збільшення при наведенні */
+}
+
 
 .station-label {
     position: absolute;
