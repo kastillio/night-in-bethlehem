@@ -46,13 +46,15 @@ const descriptions = {
         shepherds: "The shepherds were the first to hear the Good News. Find out what they saw in the sky that special night and why God chose them!",
         registration: "Visit the census registration and discover why Joseph and Mary traveled to Bethlehem. What was unique about this census?",
         carpenter: "Meet the craftsman who works with wood. What secrets does his craft hold?",
-        scribe: "See the scribe's tent.",
-        well: "Taste the water from the well.",
-        bakery: "Smell the fresh bread.",
-        spices: "Explore the spice market.",
-        "wise-men": "Meet the wise men.",
-        stable: "Step into the stable.",
-        "photo-zone": "Take a memorable photo."
+        scribe: "Learn how the scribe recorded stories of the time. How was it different from modern writing?",
+        well: "Taste the fresh water from the well. Why was water so important for the people of that time?",
+        bakery: "Smell the aroma of freshly baked bread. How was bread made in ancient times, and why was it so essential?",
+        spices:"Dive into the world of scents and flavors. What could spices reveal about the people who used them?",
+        "wise-men": "Meet the wise men who traveled from afar. What gifts did they bring, and why were they significant?",
+        stable:"Discover what the place looked like where the Child was born. Why did a stable become the cradle of the miracle?"
+
+,
+        "photo-zone": "Take a picture that will capture this special moment forever!"
     }
 };
 
