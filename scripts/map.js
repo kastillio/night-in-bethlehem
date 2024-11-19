@@ -237,7 +237,7 @@ function changeLanguage(lang) {
     });
 
     // Оновлення заголовка сторінки
-    const title = document.getElementById('camp-title'); // Перевірте, що ID вашого заголовка 'camp-title'
+    const title = document.getElementById('page-title'); // Перевірте, що ID вашого заголовка 'camp-title'
     if (currentLanguage === 'uk') {
         title.textContent = 'Інтерактивна Карта "Ніч у Вифлеємі"';
     } else if (currentLanguage === 'en') {
