@@ -226,6 +226,24 @@ function changeLanguage(lang) {
             ? 'Інтерактивна Карта "Ніч у Вифлеємі"' 
             : 'Interactive Map "Night in Bethlehem"';
     }
+function changeLanguage(lang) {
+    currentLanguage = lang;
+
+    // Оновлення текстів на кнопках станцій
+    document.querySelectorAll('.station-item').forEach(button => {
+        const station = button.getAttribute('onclick').match(/'(.+)'/)[1];
+        const stationText = textData[currentLanguage][station]?.name || "Unknown";
+        button.querySelector('.station-label').textContent = stationText;
+    });
+
+    // Оновлення заголовка сторінки
+    const title = document.getElementById('camp-title'); // Перевірте, що ID вашого заголовка 'camp-title'
+    if (currentLanguage === 'uk') {
+        title.textContent = 'Інтерактивна Карта "Ніч у Вифлеємі"';
+    } else if (currentLanguage === 'en') {
+        title.textContent = 'Interactive Map "Night in Bethlehem"';
+    }
+}
 
     // Оновлення тексту кнопки в модальному вікні
     const modal = document.getElementById('modal');
