@@ -96,6 +96,51 @@ function closeModal(event) {
         modal.classList.remove("show");
     }
 }
+<script>
+    let stationStatus = {};
+
+    // Відкриття модального вікна
+    function openModal(station) {
+        const imgSrc = `images/${station}.png`;
+        const description = textData[currentLanguage][station]?.description || "Опис недоступний";
+
+        document.getElementById("modal-image").src = imgSrc;
+        document.getElementById("modal-text").textContent = description;
+        document.getElementById("modal").dataset.station = station;
+
+        // Оновлюємо кнопку "Пройдено"
+        const completeButton = document.getElementById("complete-button");
+        completeButton.textContent = stationStatus[station] ? "Зняти галочку" : "Пройдено";
+        completeButton.dataset.completed = stationStatus[station] ? "true" : "false";
+
+        document.getElementById("modal").classList.add("show");
+    }
+
+    // Закриття модального вікна
+    function closeModal() {
+        document.getElementById("modal").classList.remove("show");
+    }
+
+    // Перемикання станції
+    function toggleCompletion() {
+        const station = document.getElementById("modal").dataset.station;
+        const button = document.querySelector(`.station-item[onclick="openModal('${station}')"]`);
+
+        // Перемикаємо статус
+        stationStatus[station] = !stationStatus[station];
+
+        // Оновлюємо текст кнопки в модальному вікні
+        const completeButton = document.getElementById("complete-button");
+        completeButton.textContent = stationStatus[station] ? "Зняти галочку" : "Пройдено";
+
+        // Змінюємо стиль кнопки на карті
+        if (stationStatus[station]) {
+            button.classList.add("completed");
+        } else {
+            button.classList.remove("completed");
+        }
+    }
+</script>
 
 
 document.addEventListener("DOMContentLoaded", updateText);
