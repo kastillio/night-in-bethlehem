@@ -1,5 +1,5 @@
 body {
-    background-image: url('images/starry-background.jpg'); /* Шлях до зображення */
+    background-image: url('images/stars-background-optimized.jpg'); /* Шлях до зображення */
     background-size: cover; /* Масштабування для покриття всього екрану */
     background-repeat: no-repeat; /* Заборона повторення */
     background-position: center center; /* Центрування зображення */
