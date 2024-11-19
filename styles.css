@@ -1,12 +1,4 @@
-body {
-    background-image: url('images/stars-background-optimized.jpg'); /* Шлях до зображення */
-    background-size: cover; /* Масштабування для покриття всього екрану */
-    background-repeat: no-repeat; /* Заборона повторення */
-    background-position: center center; /* Центрування зображення */
-    background-attachment: fixed; /* Фіксація на місці при прокручуванні */
-    margin: 0; /* Забезпечення того, що фон покриває весь екран */
-    padding: 0;
-}
+
 /* Вирівнювання кнопок мови */
 #language-buttons {
     position: relative;
