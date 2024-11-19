@@ -200,6 +200,46 @@ function changeLanguage(lang) {
             : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
     }
 }
+function changeLanguage(lang) {
+    currentLanguage = lang;
+
+    // Оновлення текстів на кнопках станцій
+    document.querySelectorAll('.station-item').forEach(button => {
+        const station = button.getAttribute('onclick').match(/'(.+)'/)[1];
+        const stationText = textData[currentLanguage][station]?.name || "Unknown";
+        button.querySelector('.station-label').textContent = stationText;
+    });
+
+    // Оновлення заголовка сторінки
+    const titleContainer = document.getElementById('page-title-container');
+    const imageElement = titleContainer.querySelector('img');
+
+    if (imageElement) {
+        // Якщо є картинка, не змінювати її
+        imageElement.alt = currentLanguage === 'uk' 
+            ? 'Інтерактивна Карта "Ніч у Вифлеємі"' 
+            : 'Interactive Map "Night in Bethlehem"';
+    } else {
+        // Якщо картинки немає, змінюємо текст
+        const title = document.getElementById('page-title');
+        title.textContent = currentLanguage === 'uk' 
+            ? 'Інтерактивна Карта "Ніч у Вифлеємі"' 
+            : 'Interactive Map "Night in Bethlehem"';
+    }
+
+    // Оновлення тексту кнопки в модальному вікні
+    const modal = document.getElementById('modal');
+    const completeButton = document.getElementById('complete-button');
+    if (modal.classList.contains('show')) {
+        const station = modal.dataset.station;
+        const description = textData[currentLanguage][station]?.description || "Description unavailable";
+        document.getElementById("modal-text").textContent = description;
+
+        completeButton.textContent = stationStatus[station]
+            ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+            : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
+    }
+}
 
 function toggleCompletion() {
     const station = document.getElementById("modal").dataset.station;
