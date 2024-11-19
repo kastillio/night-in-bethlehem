@@ -46,6 +46,37 @@ function changeLanguage(lang) {
         ? 'Інтерактивна Карта "Ніч у Вифлеємі"' 
         : 'Interactive Map "Night in Bethlehem"';
 }
+function changeLanguage(lang) {
+    currentLanguage = lang;
+
+    // Оновлення текстів на кнопках станцій
+    document.querySelectorAll('.station-item').forEach(button => {
+        const station = button.getAttribute('onclick').match(/'(.+)'/)[1];
+        const stationText = textData[currentLanguage][station]?.name || "Unknown";
+        button.querySelector('.station-label').textContent = stationText;
+    });
+
+    // Оновлення заголовка сторінки
+    const title = document.getElementById('page-title');
+    title.textContent = currentLanguage === 'uk' 
+        ? 'Інтерактивна Карта "Ніч у Вифлеємі"' 
+        : 'Interactive Map "Night in Bethlehem"';
+
+    // Оновлення тексту кнопки в модальному вікні ("Пройдено"/"Зняти галочку")
+    const modal = document.getElementById('modal');
+    const completeButton = document.getElementById('complete-button');
+
+    if (modal.classList.contains('show')) {
+        const station = modal.dataset.station;
+        const description = textData[currentLanguage][station]?.description || "Description unavailable";
+        document.getElementById("modal-text").textContent = description;
+
+        // Оновлення тексту кнопки "Пройдено"/"Зняти галочку"
+        completeButton.textContent = stationStatus[station]
+            ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+            : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
+    }
+}
 
 // Відкриття модального вікна
 function openModal(station) {
