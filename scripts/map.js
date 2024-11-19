@@ -151,6 +151,26 @@ function openModal(station) {
     // Відображення модального вікна
     document.getElementById("modal").classList.add("show");
 }
+function toggleCompletion() {
+    const station = document.getElementById("modal").dataset.station;
+    const button = document.querySelector(`.station-item[onclick="openModal('${station}')"]`);
+
+    // Змінюємо статус станції
+    stationStatus[station] = !stationStatus[station];
+
+    // Оновлення тексту кнопки в модальному вікні
+    const completeButton = document.getElementById("complete-button");
+    completeButton.textContent = stationStatus[station]
+        ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+        : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
+
+    // Оновлення вигляду кнопки станції
+    if (stationStatus[station]) {
+        button.classList.add("completed");
+    } else {
+        button.classList.remove("completed");
+    }
+}
 
 // Перемикання статусу станції
 let stationStatus = {};
