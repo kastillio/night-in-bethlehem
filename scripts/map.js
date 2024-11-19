@@ -112,7 +112,7 @@ function openModal(station) {
 
     // Оновлюємо кнопку "Пройдено"
     const completeButton = document.getElementById("complete-button");
-    completeButton.textContent = stationStatus[station] ? "Зняти галочку" : "Пройдено";
+    completeButton.textContent = stationStatus[station] ? "Непройдено" : "Пройдено";
     completeButton.dataset.completed = stationStatus[station] ? "true" : "false";
 
     document.getElementById("modal").classList.add("show");
@@ -133,7 +133,7 @@ function toggleCompletion() {
 
     // Оновлюємо текст кнопки в модальному вікні
     const completeButton = document.getElementById("complete-button");
-    completeButton.textContent = stationStatus[station] ? "Зняти галочку" : "Пройдено";
+    completeButton.textContent = stationStatus[station] ? "Непройдено" : "Пройдено";
 
     // Змінюємо стиль кнопки на карті
     if (stationStatus[station]) {
