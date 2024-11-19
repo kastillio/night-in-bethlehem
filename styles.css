@@ -1,4 +1,12 @@
-
+body {
+    background-image: url('path-to-background-image.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 /* Вирівнювання кнопок мови */
 #language-buttons {
     position: relative;
@@ -59,15 +67,7 @@ h1 {
 }
 
 /* Фонове зображення */
-body {
-    background-image: url('path-to-background-image.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+
 
 #language-buttons {
     position: absolute;
