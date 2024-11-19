@@ -1,27 +1,27 @@
 const textData = {
     uk: {
-        'shepherds': { name: "Пастухи", description: "Дізнайтеся, що побачили пастухи тієї ночі." },
-        'registration': { name: "Реєстрація", description: "Дізнайтеся, чому Йосип і Марія прийшли до Вифлеєму." },
-        'carpenter': { name: "Цех тесляра", description: "Познайомтеся з тесляром і його роботою." },
-        'scribe': { name: "Намет писаря", description: "Дізнайтеся значення імені Ісус." },
-        'well': { name: "Вифлеємська криниця", description: "Дізнайтеся про важливість води." },
-        'bakery': { name: "Пекарня", description: "Побачте, як випікають хліб." },
-        'spices': { name: "Магазин спецій", description: "Відкрийте аромат спецій." },
-        'wise-men': { name: "Мудреці", description: "Дізнайтеся, що принесли мудреці." },
-        'stable': { name: "Стайня", description: "Дізнайтеся історію про Йосипа і Марію." },
-        'photo-zone': { name: "Фотозона", description: "Зробіть пам'ятне фото." }
+        'shepherds': { name: "Пастухи", description: "Пастухи були першими, хто почув Добру Новину. Вони розкажуть вам, що саме вони побачили на зоряному небі тієї дивовижної ночі, коли народилося диво. Дізнайтеся, чому Бог обрав саме їх!" },
+        'registration': { name: "Реєстрація", description: "Відвідайте реєстрацію перепису населення та дізнайтеся, чому Йосип і Марія поїхали до Віфлеєму. Що було унікального в цьому переписі?" },
+        'carpenter': { name: "Цех тесляра", description: "Знайомтеся з майстром, який працює з деревом. Які секрети приховує його ремесло?" },
+        'scribe': { name: "Намет писаря", description: "Дізнайтеся, як писар записував історії тих часів. Чим вони відрізнялися від сучасного письма?" },
+        'well': { name: "Вифлеємська криниця", description: "Спробуйте свіжу воду з криниці. Дізнайтеся, чому вода була такою важливою для людей того часу!" },
+        'bakery': { name: "Пекарня", description: "Побачте, як випікають хліб.Відчуйте аромат свіжоспеченого хліба. Як виготовляли хліб у давні часи, і чому це було так важливо?" },
+        'spices': { name: "Магазин спецій", description: "Пориньте у світ запахів і смаків. Що могли розповісти спеції про людей, які ними користувалися?" },
+        'wise-men': { name: "Мудреці", description: "Зустріньте мудреців, які прийшли здалеку. Що вони принесли та чому це було важливо?" },
+        'stable': { name: "Стайня", description: "Дізнайтеся, як виглядало місце, де народилося Дитя. Чому саме стайня стала колискою для Ісуса" },
+        'photo-zone': { name: "Фотозона", description: "Зробіть фото, яке збереже цю особливу мить у вашій пам’яті!" }
     },
     en: {
-        'shepherds': { name: "Shepherds", description: "Find out what the shepherds saw that night." },
-        'registration': { name: "Registration", description: "Learn why Joseph and Mary came to Bethlehem." },
-        'carpenter': { name: "Carpenter's Workshop", description: "Meet the carpenter and his work." },
-        'scribe': { name: "Scribe's Tent", description: "Discover the meaning of the name Jesus." },
-        'well': { name: "Bethlehem Well", description: "Learn the importance of water." },
-        'bakery': { name: "Bakery", description: "See how bread is baked." },
-        'spices': { name: "Spice Market", description: "Explore the aroma of spices." },
-        'wise-men': { name: "Wise Men", description: "Find out what gifts the wise men brought." },
-        'stable': { name: "Stable", description: "Learn the story of Joseph and Mary." },
-        'photo-zone': { name: "Photo Zone", description: "Take a memorable photo." }
+        'shepherds': { name: "Shepherds", description: "The shepherds were the first to hear the Good News. Find out what they saw in the sky that special night and why God chose them!" },
+        'registration': { name: "Registration", description: "Visit the census registration and discover why Joseph and Mary traveled to Bethlehem. What was unique about this census?" },
+        'carpenter': { name: "Carpenter's Workshop", description: "Meet the craftsman who works with wood. What secrets does his craft hold?" },
+        'scribe': { name: "Scribe's Tent", description: "Discover the meaning of the name Jesus.Learn how the scribe recorded stories of the time. How was it different from modern writing?" },
+        'well': { name: "Bethlehem Well", description: "Taste the fresh water from the well. Why was water so important for the people of that time?" },
+        'bakery': { name: "Bakery", description: "Smell the aroma of freshly baked bread. How was bread made in ancient times, and why was it so essential?" },
+        'spices': { name: "Spice Market", description: "Dive into the world of scents and flavors. What could spices reveal about the people who used them?" },
+        'wise-men': { name: "Wise Men", description: "Meet the wise men who traveled from afar. What gifts did they bring, and why were they significant?" },
+        'stable': { name: "Stable", description: "Discover what the place looked like where the Child was born. Why did a stable become the cradle of the miracle?" },
+        'photo-zone': { name: "Photo Zone", description: "Take a picture that will capture this special moment forever!" }
     }
 };
 
