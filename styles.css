@@ -1,68 +1,45 @@
 body {
-    background-image: url('stars-background-optimized.jpg
-');
+    background: url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
     font-family: Arial, sans-serif;
+    color: #333;
     margin: 0;
     padding: 0;
 }
-/* Вирівнювання кнопок мови */
-#language-buttons {
-    position: relative;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 1000;
-}
-.station-image {
-    width: 150px; /* Фіксована ширина */
-    height: 150px; /* Фіксована висота */
-    object-fit: cover; /* Адаптація зображення */
-    border-radius: 10px; /* Заокруглені краї */
-}
-@media (max-width: 768px) {
-    .station-image {
-        width: 120px;
-        height: 120px;
-    }
-    .station-item {
-        width: 140px;
-        height: 180px;
-    }
-}
 
-.station-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 180px;
-    height: 220px;
-    margin: 10px; /* Проміжки між кнопками */
-    border: 2px solid #ffd700;
-    border-radius: 15px;
-    background-color: #fff;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease-in-out;
-}
-.station-item:hover {
-    transform: scale(1.05); /* Ефект збільшення при наведенні */
-}
-
-/* Стилізація заголовка */
-h1 {
-    margin-top: 50px;
+header {
     text-align: center;
-    font-size: 2em;
+    margin: 20px;
+}
+
+#logo {
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+h1 {
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-* Центрування іконок станцій */
+#language-buttons {
+    position: relative;
+    top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#language-buttons button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f7d774;
+    font-size: 1rem;
+}
+
 #location-list {
     display: flex;
     flex-wrap: wrap;
@@ -71,199 +48,30 @@ h1 {
     margin-top: 20px;
 }
 
-/* Індивідуальні стилі для кнопок */
-
-
-/* Стилі для тексту кнопок */
-.station-label {
-    text-align: center;
-    font-size: 0.9em;
-    font-weight: bold;
-    color: #333;
-    margin-top: 5px;
-}
-
-/* Фонове зображення */
-
-
-#language-buttons {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000; /* Завжди буде вище за модальне вікно */
-}
-
-#language-buttons button {
-    margin: 0 10px; /* Відстань між кнопками */
-    padding: 10px 20px; /* Внутрішній відступ для кнопок */
-    font-size: 16px;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 10;
-}
-/* Заголовок сторінки */
-#page-title {
-    text-align: center;
-    font-size: 2.5em;
-    color: #ffffff; /* Білий текст */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Тінь для кращої видимості */
-    margin-top: 20px;
-}
-
-#language-buttons button:hover {
-    background-color: #dcdcdc;
-}
-
-#location-list {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.location-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #ffeb3b;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-#modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: none;
-}
-
-#modal.show {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 300px;
-    position: relative;
-    text-align: center;
-}
-
-.modal-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.8em;
-    cursor: pointer;
-}
-
-.close-button:hover {
-    color: #ff0000;
-}
 .station-item {
-    display: inline-block;
-    width: 120px;
-    height: 140px;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    position: relative;
-    background-color: #ffd54f;
-    border: 2px solid #e0a800;
+    background-color: #ffd966;
     border-radius: 15px;
+    padding: 10px;
+    width: 150px;
+    height: 200px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 0.2s;
 }
 
 .station-item:hover {
-    transform: scale(1.1);
-    background-color: #ffcc00;
+    transform: scale(1.05);
 }
-
-.station-item.completed {
-    background-color: #c8e6c9; /* Тьмяний зелений */
-    border-color: #388e3c; /* Темно-зелений бордер */
-    opacity: 0.6; /* Прозорість кнопки */
-    pointer-events: auto; /* Вимкнення можливості натискати */
-}
-
-.station-item.completed:hover {
-    transform: none; /* Забираємо ефект збільшення при наведенні */
-}
-
 
 .station-label {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
+    margin-top: 10px;
     font-weight: bold;
-    background-color: #fff;
-    padding: 3px 8px;
-    border-radius: 8px;
-    color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
 }
 
-.station-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-top: 20px;
+.hidden {
+    display: none;
 }
-.complete-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.2s;
-}
-
-.complete-button:hover {
-    background-color: #45a049;
-}
-
-/* Стиль для кнопки-хрестика */
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 2em;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    border-radius: 50%;
-    padding: 5px;
-    color: #333;
-    transition: transform 0.2s, background 0.2s;
-}
-
-.close-button:hover {
-    background: rgba(255, 255, 255, 1);
-    color: #ff0000;
-    transform: scale(1.2);
-}
-
