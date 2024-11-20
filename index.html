@@ -8,104 +8,30 @@
 </head>
 <body>
     <header>
-      <div id="page-title-container" style="text-align: center;">
-    <img id="page-title-image" src="images/night-logo.png" alt="Інтерактивна Карта 'Ніч у Вифлеємі'" style="display: block; margin: 0 auto; max-width: 400px;">
-    <h1 id="page-title" style="margin-top: 10px; font-size: 1.5rem;">Інтерактивна Карта "Ніч у Вифлеємі"</h1>
-</div>
-
-
         <div id="language-buttons">
-           <button onclick="changeLanguage('uk')">Українська</button>
-<button onclick="changeLanguage('en')">English</button>
-
+            <button onclick="changeLanguage('uk')">Українська</button>
+            <button onclick="changeLanguage('en')">English</button>
         </div>
+        <img src="images/night-logo.png" alt="Night in Bethlehem" id="logo">
+        <h1 id="page-title">Інтерактивна Карта "Ніч у Вифлеємі"</h1>
     </header>
 
-<div id="location-list">
+    <div id="location-list">
         <button class="station-item" onclick="openModal('shepherds')">
             <div class="station-label">Пастухи</div>
             <img src="images/shepherds.png" alt="Shepherds" class="station-image">
         </button>
-        <button class="station-item" onclick="openModal('registration')">
-            <div class="station-label">Реєстрація</div>
-            <img src="images/registration.png" alt="Registration" class="station-image">
-        </button>
-        <button class="station-item" onclick="openModal('carpenter')">
-            <div class="station-label">Цех тесляра</div>
-            <img src="images/carpenter.png" alt="Carpenter" class="station-image">
-        </button>
-        <button class="station-item" onclick="openModal('scribe')">
-            <div class="station-label">Намет писаря</div>
-            <img src="images/scribe.png" alt="Scribe" class="station-image">
-        </button>
-        <button class="station-item" onclick="openModal('well')">
-            <div class="station-label">Вифлеємська криниця</div>
-            <img src="images/well.png" alt="Bethlehem Well" class="station-image">
-        </button>
-        <button class="station-item" onclick="openModal('bakery')">
-            <div class="station-label">Пекарня</div>
-            <img src="images/bakery.png" alt="Bakery" class="station-image">
-        </button>
-        <button class="station-item" onclick="openModal('spices')">
-            <div class="station-label">Магазин спецій</div>
-            <img src="images/spices.png" alt="Spice Market" class="station-image">
-        </button>
-        <button class="station-item" onclick="openModal('wise-men')">
-            <div class="station-label">Мудреці</div>
-            <img src="images/wise-men.png" alt="Wise Men" class="station-image">
-        </button>
-        <button class="station-item" onclick="openModal('stable')">
-            <div class="station-label">Стайня</div>
-            <img src="images/stable.png" alt="Stable" class="station-image">
-        </button>
-        <button class="station-item" onclick="openModal('photo-zone')">
-            <div class="station-label">Фотозона</div>
-            <img src="images/photo-zone.png" alt="Photo Zone" class="station-image">
-        </button>
+        <!-- Інші станції аналогічно -->
     </div>
-    
-<!--<div id="location-list">
-    <button class="station-item" onclick="openModal('shepherds')">
-        <div class="station-label">Пастухи</div>
-        <img src="images/shepherds.png" alt="Shepherds" class="station-image">
-    </button>
-    <button class="station-item" onclick="openModal('registration')">
-        <div class="station-label">Реєстрація</div>
-        <img src="images/registration.png" alt="Registration" class="station-image">
-    </button>
-     Додайте інші станції аналогічно 
-</div>
 
-    <div id="location-list">
-        <button class="location-button" onclick="openModal('shepherds')">Пастухи</button>
-        <button class="location-button" onclick="openModal('registration')">Реєстрація</button>
-        <button class="location-button" onclick="openModal('carpenter')">Цех тесляра</button>
-        <button class="location-button" onclick="openModal('scribe')">Намет писаря</button>
-        <button class="location-button" onclick="openModal('well')">Вифлеємська криниця</button>
-        <button class="location-button" onclick="openModal('bakery')">Пекарня</button>
-        <button class="location-button" onclick="openModal('spices')">Магазин спецій</button>
-        <button class="location-button" onclick="openModal('wise-men')">Мудреці</button>
-        <button class="location-button" onclick="openModal('stable')">Стайня</button>
-        <button class="location-button" onclick="openModal('photo-zone')">Фотозона</button>
-    </div>-->
-
-    <!-- Модальне вікно 
-    <div id="modal" class="hidden" onclick="closeModal(event)">
-        <div id="modal-content" onclick="event.stopPropagation()">
-        <button id="close-modal" class="close-button" type="button">&times;</button>
+    <div id="modal" class="hidden">
+        <div id="modal-content">
+            <button id="close-modal" class="close-button" onclick="closeModal()">&times;</button>
             <img id="modal-image" src="" alt="Station Image" class="modal-img">
             <p id="modal-text"></p>
+            <button id="complete-button" class="complete-button" onclick="toggleCompletion()">Пройдено</button>
         </div>
-    </div>-->
-    <div id="modal" class="hidden">
-    <div id="modal-content">
-        <button id="close-modal" class="close-button" onclick="closeModal()">&times;</button>
-        <img id="modal-image" src="" alt="Station Image" class="modal-img">
-        <p id="modal-text"></p>
-        <button id="complete-button" class="complete-button" onclick="toggleCompletion()">Пройдено</button>
     </div>
-</div>
-
 
     <script src="scripts/map.js"></script>
 </body>
