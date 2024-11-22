@@ -112,6 +112,20 @@ function changeLanguage(lang) {
         const stationText = textData[currentLanguage][station]?.name || "Unknown";
         button.querySelector('.station-label').textContent = stationText;
     });
+const modal = document.querySelector('.modal');
+const closeModal = () => {
+    modal.style.display = 'none';
+};
+
+// Закриття при кліку на хрестик
+document.querySelector('.modal-close').addEventListener('click', closeModal);
+
+// Закриття при натисканні на фон
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        closeModal();
+    }
+});
 
     // Оновлення заголовка сторінки
     const title = document.getElementById('camp-title'); // Заголовок сторінки
