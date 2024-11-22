@@ -116,6 +116,21 @@ body {
     font-size: 1.2em;
     cursor: pointer;
 }
+button {
+    background-color: #f8c300; /* Золотистий колір */
+    color: #fff; /* Білий текст */
+    border: none;
+    border-radius: 10px; /* Округлі краї */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Анімація при наведенні */
+}
+
+button:hover {
+    background-color: #ffc107; /* Трохи світліший золотистий */
+    transform: scale(1.1); /* Збільшення при наведенні */
+}
 
 #modal {
     position: fixed;
