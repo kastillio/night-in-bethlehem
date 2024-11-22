@@ -3,23 +3,56 @@
 
 
 body {
-    background-image: url('images/stars-background-optimized.jpg'); /* Вставте шлях до вашого зображення */
-    background-size: cover; /* Покриває весь екран */
-    background-position: center; /* Центруємо зображення */
-    background-attachment: fixed; /* Фіксуємо при прокрутці */
+    background-image: url('images/stars-background-optimized.jpg'); /* Замініть на шлях до вашого зображення */
+    background-size: cover; /* Розтягнення зображення */
+    background-position: center; /* Центрування */
+    background-attachment: fixed; /* Фіксуємо фон */
+    background-repeat: no-repeat; /* Відсутність повторів */
     margin: 0;
     padding: 0;
-    height: 100vh; /* Висота на весь екран */
+    height: 100%; /* Покриває всю сторінку */
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Напівпрозоре затемнення */
+    z-index: -1; /* Щоб залишити всі елементи на передньому плані */
 }
 
 
 /* Стилізація заголовка */
 h1 {
-    margin-top: 80px; /* Відступ після кнопок мови */
-    font-size: 2.5em;
-    color: #fff;
+    color: #ffffff; /* Білий текст */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Легке затемнення */
     text-align: center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+.station-item {
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
+    border: 2px solid #ffa500;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #333; /* Темний текст */
+}
+
+.station-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.station-label {
+    background-color: rgba(255, 255, 255, 0.8); /* Білий фон під текст */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #333; /* Темний текст */
 }
 
 
