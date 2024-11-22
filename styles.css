@@ -9,6 +9,17 @@
     gap: 10px;
     z-index: 1000;
 }
+body {
+    background-image: url('path-to-your-background-image.jpg'); /* Шлях до фонового зображення */
+    background-size: cover; /* Розтягнення зображення на весь екран */
+    background-position: center;
+    background-attachment: fixed; /* Фіксуємо фон */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Висота на весь екран */
+    color: #fff; /* Білий текст */
+    font-family: Arial, sans-serif;
+}
 
 /* Стилізація заголовка */
 h1 {
