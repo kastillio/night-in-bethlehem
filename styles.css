@@ -1,28 +1,27 @@
 
 /* Вирівнювання кнопок мови */
 
+
 body {
-    background-image: url('images/stars-background-optimized.jpg'); /* Шлях до зображення */
-    background-size: cover; /* Розтягуємо зображення */
-    background-position: center; /* Центруємо */
-    background-attachment: fixed; /* Фіксуємо фон при прокрутці */
-    height: 100vh; /* Висота на весь екран */
+    background-image: url('images/stars-background-optimized.jpg'); /* Вставте шлях до вашого зображення */
+    background-size: cover; /* Покриває весь екран */
+    background-position: center; /* Центруємо зображення */
+    background-attachment: fixed; /* Фіксуємо при прокрутці */
     margin: 0;
     padding: 0;
-    color: #fff; /* Білий текст для контрастності */
-    font-family: Arial, sans-serif;
+    height: 100vh; /* Висота на весь екран */
 }
 
 
 /* Стилізація заголовка */
 h1 {
-    font-size: 2.5em; /* Трохи більший текст */
-    margin-top: 30px; /* Більший відступ зверху */
-    text-align: center;
+    margin-top: 80px; /* Відступ після кнопок мови */
+    font-size: 2.5em;
     color: #fff;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Глибше світіння */
-    letter-spacing: 1px; /* Розрядка між буквами */
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
+
 
 
 
