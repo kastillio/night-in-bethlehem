@@ -68,6 +68,33 @@ h1 {
     color: #333;
     margin-top: 5px;
 }
+#language-buttons {
+    position: fixed; /* Фіксуємо вгорі */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1000; /* Завжди вище за фон */
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний фон */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#language-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff; /* Білий текст */
+    background-color: #007bff; /* Синій фон */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#language-buttons button:hover {
+    background-color: #0056b3; /* Темніший синій при наведенні */
+}
 
 /* Фонове зображення */
 body {
