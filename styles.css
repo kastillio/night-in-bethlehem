@@ -131,6 +131,16 @@ button:hover {
     background-color: #ffc107; /* Трохи світліший золотистий */
     transform: scale(1.1); /* Збільшення при наведенні */
 }
+h1 {
+    font-family: 'Cinzel', serif; /* Стильний шрифт */
+    color: #ffffff; /* Білий текст */
+    text-shadow: 0 0 10px #f8c300, 0 0 20px #f8c300; /* Світіння */
+}
+body {
+    background: url('stars-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff; /* Зробити текст читабельним на темному фоні */
+}
 
 #modal {
     position: fixed;
