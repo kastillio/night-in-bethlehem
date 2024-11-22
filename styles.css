@@ -139,9 +139,7 @@ body {
     margin-top: 20px;
 }
 
-#language-buttons button:hover {
-    background-color: #dcdcdc;
-}
+
 
 #location-list {
     max-width: 400px;
