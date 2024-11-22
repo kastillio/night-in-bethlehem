@@ -16,12 +16,14 @@ body {
 
 /* Стилізація заголовка */
 h1 {
-    font-size: 2em;
-    color: #fff; /* Білий текст */
+    font-size: 2.5em; /* Трохи більший текст */
+    margin-top: 30px; /* Більший відступ зверху */
     text-align: center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Легке світіння */
-    margin-top: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Глибше світіння */
+    letter-spacing: 1px; /* Розрядка між буквами */
 }
+
 
 
 /* Центрування іконок станцій */
@@ -35,30 +37,27 @@ h1 {
 
 /* Індивідуальні стилі для кнопок */
 .station-item {
-    position: relative;
-    width: 120px;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    width: 140px; /* Збільшений розмір */
+    height: 180px; /* Відповідна висота */
     background-color: #ffebcd;
     border: 2px solid #ffa500;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s;
-}
-
-.station-item {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тінь для глибини */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Тінь для глибини */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .station-item:hover {
-    transform: scale(1.05); /* Збільшення при наведенні */
+    transform: scale(1.05); /* Легке збільшення при наведенні */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Інтенсивніша тінь */
 }
+
+.station-item.completed {
+    background-color: #c8e6c9; /* Світло-зелений колір */
+    border-color: #388e3c;
+    opacity: 0.8; /* Легке зменшення прозорості */
+}
+
 
 /* Стилі для тексту кнопок */
 .station-label {
