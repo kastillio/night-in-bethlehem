@@ -10,7 +10,7 @@
     z-index: 1000;
 }
 body {
-    background-image: url('path-to-your-background-image.jpg'); /* Шлях до фонового зображення */
+    background-image: url('images/stars-background-optimized.jpg'); /* Шлях до фонового зображення */
     background-size: cover; /* Розтягнення зображення на весь екран */
     background-position: center;
     background-attachment: fixed; /* Фіксуємо фон */
