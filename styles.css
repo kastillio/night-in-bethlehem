@@ -3,15 +3,16 @@
 
 
 body {
-    background-image: url('images/stars-background-optimized.jpg'); /* Замініть на шлях до вашого зображення */
-    background-size: cover; /* Розтягнення зображення */
-    background-position: center; /* Центрування */
-    background-attachment: fixed; /* Фіксуємо фон */
-    background-repeat: no-repeat; /* Відсутність повторів */
+    background-image: url('images/stars-background-optimized.jpg'); /* Вкажіть шлях до вашого зображення */
+    background-size: cover; /* Зображення розтягнеться, щоб покрити весь екран */
+    background-repeat: no-repeat; /* Забороняємо повтори */
+    background-position: center; /* Центруємо зображення */
+    background-attachment: fixed; /* Фіксуємо фон під час прокрутки */
     margin: 0;
     padding: 0;
-    height: 100%; /* Покриває всю сторінку */
+    height: 100vh; /* Висота сторінки дорівнює висоті вікна браузера */
 }
+
 body::before {
     content: '';
     position: fixed;
