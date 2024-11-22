@@ -50,8 +50,14 @@ h1 {
     transition: transform 0.3s;
 }
 
+.station-item {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тінь для глибини */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
 .station-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Збільшення при наведенні */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Інтенсивніша тінь */
 }
 
 /* Стилі для тексту кнопок */
