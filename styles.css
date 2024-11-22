@@ -67,19 +67,6 @@ h1 {
     color: #333;
     margin-top: 5px;
 }
-#language-buttons {
-    position: fixed; /* Фіксоване розташування зверху */
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 15px;
-    z-index: 1000; /* Завжди поверх інших елементів */
-    background: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон */
-    padding: 10px 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 #language-buttons button {
     padding: 10px 20px;
