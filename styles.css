@@ -59,11 +59,10 @@ h1 {
 }
 
 .station-image {
-    width: 100px;
-    height: 100px;
-    object-fit: contain; /* Зберігаємо пропорції */
-    margin: 0 auto 10px auto; /* Вирівнюємо по центру */
-    display: block; /* Блочний елемент */
+    width: 80px; /* Фіксована ширина */
+    height: 80px; /* Фіксована висота */
+    object-fit: contain; /* Пропорційне масштабування */
+    margin-bottom: 10px; /* Відступ між іконкою та текстом */
 }
 
 
