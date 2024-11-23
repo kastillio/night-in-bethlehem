@@ -22,7 +22,7 @@ const textData = {
         'spices': { name: "Spice Market", description: "What could spices reveal about the people who used them?" },
         'wise-men': { name: "Wise Men", description: "What gifts did the Wise Men bring, and why were they significant?" },
         'spinning-wheel': { name: "spinning-wheel", description: "Children will learn how the spinning wheel was used in ancient times to make clothing." },
-        'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" } the spinning wheel was used in ancient times to make clothing
+        'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" } 
     }
 };
 
