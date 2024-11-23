@@ -159,6 +159,7 @@ h1 {
 
 /* Заголовок сторінки */
 #page-title {
+    margin-bottom: 15px; /* Відступ між заголовком і контентом */
     text-align: center;
     font-size: 2.5em;
     color: #ffffff; /* Білий текст */
