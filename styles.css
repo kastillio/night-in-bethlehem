@@ -334,3 +334,13 @@ h1#page-title {
     color: #ff0000;
     transform: scale(1.2);
 }
+@keyframes sparkle {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+#modal-content {
+    animation: sparkle 2s infinite;
+}
+
