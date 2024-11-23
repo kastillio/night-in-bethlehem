@@ -41,6 +41,14 @@ function startTimer() {
         }
     }, 1000);
 }
+function showQuestion() {
+    const question = prompt("Чому пастухи стали першими, хто почув Добру Новину?");
+    if (question.toLowerCase().includes("бог")) {
+        alert("Правильно! Пастухи були обрані Богом за їхню простоту та віру.");
+    } else {
+        alert("Спробуй ще раз!");
+    }
+}
 
 // Функція для зміни мови
 function changeLanguage(lang) {
