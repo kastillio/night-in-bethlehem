@@ -44,13 +44,28 @@ h1 {
 }
 
 .station-item {
+    display: flex;
+    flex-direction: column; /* Розташування елементів зверху вниз */
+    align-items: center; /* Горизонтальне центрування */
+    justify-content: center; /* Вертикальне центрування */
     background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
     border: 2px solid #ffa500;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
     color: #333; /* Темний текст */
+    width: 120px; /* Ширина кнопки */
+    height: 160px; /* Висота кнопки */
+    text-align: center; /* Вирівнювання тексту */
 }
+
+.station-image {
+    width: 80px; /* Розмір іконки */
+    height: 80px;
+    object-fit: cover; /* Збереження пропорцій */
+    margin-bottom: 10px; /* Відступ між іконкою та текстом */
+}
+
 
 .station-item:hover {
     transform: scale(1.05);
