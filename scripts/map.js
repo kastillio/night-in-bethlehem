@@ -9,7 +9,7 @@ const textData = {
         'bakery': { name: "Пекарня", description: "Як виготовляли хліб у давні часи?" },
         'spices': { name: "Магазин спецій", description: "Що могли розповісти спеції про людей?" },
         'wise-men': { name: "Мудреці", description: "Що мудреці принесли до Вифлеєму і чому це було важливо?" },
-        'spinning-wheel': { name: "Прядильне колесо", description: "Дізнайтеся, як створювали одяг у стародавні часи, та виберіть костюм для фотозони!" },
+        'stable': { name: "Стайня", description: "Дізнайтеся, чому саме стайня стала колискою для Ісуса." },
         'photo-zone': { name: "Фотозона", description: "Зробіть фото, яке збереже цю мить!" }
     },
     en: {
@@ -21,8 +21,8 @@ const textData = {
         'bakery': { name: "Bakery", description: "How was bread made in ancient times?" },
         'spices': { name: "Spice Market", description: "What could spices reveal about the people who used them?" },
         'wise-men': { name: "Wise Men", description: "What gifts did the Wise Men bring, and why were they significant?" },
-        'spinning-wheel': { name: "spinning-wheel", description: "Children will learn how the spinning wheel was used in ancient times to make clothing." },
-        'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" } 
+        'stable': { name: "Stable", description: "Discover why the stable became the cradle for Jesus." },
+        'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" }
     }
 };
 
@@ -46,23 +46,23 @@ function changeLanguage(lang) {
     title.textContent = currentLanguage === 'uk'
         ? 'Інтерактивна Карта "Ніч у Вифлеємі"'
         : 'Interactive Map "Night in Bethlehem"';
+
+    // Оновлення тексту у модальному вікні
+    const modal = document.getElementById('modal');
+    if (modal.classList.contains('show')) {
+        updateModalText(modal.dataset.station);
+    }
 }
 
 // Функція для відкриття модального вікна
-function openModal(stationKey) {
-    const station = stationData[stationKey];
-    if (!station) return; // Якщо даних немає, виходимо
-
-    // Оновлення контенту модального вікна
-    document.getElementById("modal-image").src = station.image;
-    document.getElementById("modal-text").innerText = station.description[currentLanguage];
-    document.getElementById("modal-title").innerText = station.title[currentLanguage];
-
-    // Збереження ключа станції у dataset модального вікна
+function openModal(station) {
     const modal = document.getElementById("modal");
-    modal.dataset.station = stationKey;
+    modal.dataset.station = station;
 
-    // Показуємо модальне вікно
+    // Оновлення тексту та зображення у модальному вікні
+    updateModalText(station);
+
+    // Відображення модального вікна
     modal.classList.add("show");
 }
 
@@ -72,19 +72,42 @@ function closeModal() {
     modal.classList.remove("show");
 }
 
+// Оновлення тексту у модальному вікні
+function updateModalText(station) {
+    const description = textData[currentLanguage][station]?.description || "Опис недоступний";
+    const imgSrc = `images/${station}.png`;
+
+    document.getElementById("modal-image").src = imgSrc;
+    document.getElementById("modal-text").textContent = description;
+
+    const completeButton = document.getElementById("complete-button");
+    completeButton.textContent = stationStatus[station]
+        ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+        : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
+}
+
+// Функція для перемикання статусу станції
+function toggleCompletion() {
+    const modal = document.getElementById("modal");
+    const station = modal.dataset.station;
+    const button = document.querySelector(`.station-item[onclick="openModal('${station}')"]`);
+
+    stationStatus[station] = !stationStatus[station];
+
+    // Оновлення статусу кнопки
+    if (stationStatus[station]) {
+        button.classList.add("completed");
+    } else {
+        button.classList.remove("completed");
+    }
+
+    // Оновлення тексту у модальному вікні
+    updateModalText(station);
+}
+
 // Закриття модального вікна при кліці на фон
 document.getElementById("modal").addEventListener("click", (event) => {
     if (event.target.id === "modal") {
         closeModal();
     }
 });
-
-// Оновлення тексту у модальному вікні
-function updateModalText(station) {
-    const description = textData[currentLanguage][station]?.description || "Опис недоступний";
-    document.getElementById("modal-text").textContent = description;
-}
-
-// Робимо функції доступними глобально
-window.openModal = openModal;
-window.changeLanguage = changeLanguage;
