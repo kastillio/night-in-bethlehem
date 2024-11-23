@@ -45,24 +45,18 @@ h1 {
 }
 
 .station-item {
-    display: flex; /* Включаємо Flexbox */
-    flex-direction: column; /* Розташовуємо іконку та текст вертикально */
-    align-items: center; /* Горизонтальне вирівнювання по центру */
-    justify-content: center; /* Вертикальне вирівнювання по центру */
-    text-align: center; /* Центруємо текст */
-    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий фон */
-    width: 120px; /* Ширина кнопки */
-    height: 160px; /* Висота кнопки */
-    border: 2px solid #ffa500; /* Границя */
-    border-radius: 10px; /* Закруглені краї */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тінь */
+    display: flex; /* Вмикаємо Flexbox */
+    flex-direction: column; /* Елементи розташовані вертикально */
+    align-items: center; /* Горизонтальне центрування */
+    justify-content: center; /* Вертикальне центрування */
+    text-align: center; /* Вирівнюємо текст */
 }
 
 .station-image {
-    width: 80px; /* Розмір іконки */
-    height: 80px;
-    object-fit: cover; /* Зберігаємо пропорції зображення */
-    margin-bottom: 10px; /* Відступ між іконкою та текстом */
+    width: auto; /* Динамічна ширина */
+    height: 80px; /* Висота іконки */
+    object-fit: contain; /* Зберігаємо пропорції без обрізки */
+    margin-bottom: 10px; /* Відступ між картинкою та текстом */
 }
 
 
