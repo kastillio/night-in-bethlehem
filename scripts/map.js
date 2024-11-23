@@ -30,6 +30,18 @@ const textData = {
 let currentLanguage = 'uk'; // Поточна мова
 let stationStatus = {}; // Статуси станцій
 
+let timer;
+function startTimer() {
+    let seconds = 30;
+    timer = setInterval(() => {
+        document.getElementById("timer").innerText = `Залишилось: ${seconds--} секунд`;
+        if (seconds < 0) {
+            clearInterval(timer);
+            alert("Час закінчився!");
+        }
+    }, 1000);
+}
+
 // Функція для зміни мови
 function changeLanguage(lang) {
     currentLanguage = lang;
