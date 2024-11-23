@@ -90,7 +90,7 @@ const stationData = {
         image: "images/spinning-wheel.png"
     },
     // Інші станції...
-};
+
 
 // Оновлення тексту у модальному вікні
 function updateModalText(station) {
