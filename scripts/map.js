@@ -55,16 +55,17 @@ function changeLanguage(lang) {
 }
 
 // Функція для відкриття модального вікна
-function openModal(station) {
-    const modal = document.getElementById("modal");
-    modal.dataset.station = station;
+function openModal(stationKey) {
+    const station = stationData[stationKey]; // Отримуємо дані станції
+    if (!station) return; // Якщо даних немає, виходимо
 
-    // Оновлення тексту та зображення у модальному вікні
-    updateModalText(station);
-
-    // Відображення модального вікна
-    modal.classList.add("show");
+    // Оновлюємо модальне вікно
+    document.getElementById("modal-image").src = station.image;
+    document.getElementById("modal-text").innerText = station.description[currentLanguage];
+    document.getElementById("modal-title").innerText = station.title[currentLanguage];
+    document.getElementById("modal").classList.remove("hidden");
 }
+
 
 // Функція для закриття модального вікна
 function closeModal() {
