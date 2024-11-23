@@ -46,81 +46,30 @@ function changeLanguage(lang) {
     title.textContent = currentLanguage === 'uk'
         ? 'Інтерактивна Карта "Ніч у Вифлеємі"'
         : 'Interactive Map "Night in Bethlehem"';
-
-    // Оновлення тексту у модальному вікні
-    const modal = document.getElementById('modal');
-    if (modal.classList.contains('show')) {
-        updateModalText(modal.dataset.station);
-    }
 }
 
 // Функція для відкриття модального вікна
 function openModal(stationKey) {
-    const station = stationData[stationKey]; // Отримуємо дані станції
+    const station = stationData[stationKey];
     if (!station) return; // Якщо даних немає, виходимо
 
-    // Оновлюємо модальне вікно
+    // Оновлення контенту модального вікна
     document.getElementById("modal-image").src = station.image;
     document.getElementById("modal-text").innerText = station.description[currentLanguage];
     document.getElementById("modal-title").innerText = station.title[currentLanguage];
-    document.getElementById("modal").classList.remove("hidden");
-}
 
+    // Збереження ключа станції у dataset модального вікна
+    const modal = document.getElementById("modal");
+    modal.dataset.station = stationKey;
+
+    // Показуємо модальне вікно
+    modal.classList.add("show");
+}
 
 // Функція для закриття модального вікна
 function closeModal() {
     const modal = document.getElementById("modal");
     modal.classList.remove("show");
-}
-
-const stationData = {
-    spinningWheel: {
-        title: {
-            uk: "Прядильне колесо",
-            en: "Spinning Wheel"
-        },
-        description: {
-            uk: "Діти дізнаються, як використовували прядильне колесо у стародавні часи для виготовлення одягу.",
-            en: "Children will learn how the spinning wheel was used in ancient times to make clothing."
-        },
-        image: "images/spinning-wheel.png"
-    },
-    // Інші станції...
-
-    
-
-// Оновлення тексту у модальному вікні
-function updateModalText(station) {
-    const description = textData[currentLanguage][station]?.description || "Опис недоступний";
-    const imgSrc = `images/${station}.png`;
-
-    document.getElementById("modal-image").src = imgSrc;
-    document.getElementById("modal-text").textContent = description;
-
-    const completeButton = document.getElementById("complete-button");
-    completeButton.textContent = stationStatus[station]
-        ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
-        : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
-}
-
-// Функція для перемикання статусу станції
-function toggleCompletion() {
-    const modal = document.getElementById("modal");
-    const station = modal.dataset.station;
-    const button = document.querySelector(`.station-item[onclick="openModal('${station}')"]`);
-
-    // Змінюємо статус
-    stationStatus[station] = !stationStatus[station];
-
-    // Додаємо або видаляємо клас `completed`
-    if (stationStatus[station]) {
-        button.classList.add("completed");
-    } else {
-        button.classList.remove("completed");
-    }
-
-    // Оновлюємо текст у модальному вікні
-    updateModalText(station);
 }
 
 // Закриття модального вікна при кліці на фон
@@ -129,3 +78,13 @@ document.getElementById("modal").addEventListener("click", (event) => {
         closeModal();
     }
 });
+
+// Оновлення тексту у модальному вікні
+function updateModalText(station) {
+    const description = textData[currentLanguage][station]?.description || "Опис недоступний";
+    document.getElementById("modal-text").textContent = description;
+}
+
+// Робимо функції доступними глобально
+window.openModal = openModal;
+window.changeLanguage = changeLanguage;
