@@ -172,6 +172,15 @@ h1 {
     box-shadow: none; /* Якщо є тінь, видаляємо її */
 }
 
+#page-title-container {
+    background: none !important; /* Прибираємо фон точно */
+    background-color: transparent !important; /* Прозорий фон */
+}
+
+#language-buttons {
+    background: none !important; /* Видаляємо будь-який фон */
+    box-shadow: none !important; /* Видаляємо тіні */
+}
 
 #location-list {
     max-width: 400px;
