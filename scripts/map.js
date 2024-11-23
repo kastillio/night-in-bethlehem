@@ -21,7 +21,7 @@ const textData = {
         'bakery': { name: "Bakery", description: "How was bread made in ancient times?" },
         'spices': { name: "Spice Market", description: "What could spices reveal about the people who used them?" },
         'wise-men': { name: "Wise Men", description: "What gifts did the Wise Men bring, and why were they significant?" },
-        'stable': { name: "Stable", description: "Discover why the stable became the cradle for Jesus." },
+        'spinningWheel': { name: " spinningWheel", description: "Discover why the stable became the cradle for Jesus." },
         'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" }
     }
 };
