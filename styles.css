@@ -254,20 +254,7 @@ h1 {
 .close-button:hover {
     color: #ff0000;
 }
-.station-item {
-    
-    width: 120px;
-    height: 140px;
-    margin: 10px;
-    text-align: center;
-    position: relative;
-    background-color: #ffd54f;
-    border: 2px solid #e0a800;
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, background-color 0.2s;
-}
+
 
 .station-item:hover {
     transform: scale(1.1);
