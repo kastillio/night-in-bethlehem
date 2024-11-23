@@ -166,10 +166,6 @@ h1 {
 }
 
 
-#language-buttons {
-    background: none !important; /* Видаляємо будь-який фон */
-    box-shadow: none !important; /* Видаляємо тіні */
-}
 
 #location-list {
     max-width: 400px;
