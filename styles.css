@@ -216,6 +216,9 @@ h1 {
     text-shadow: 0 0 10px #f8c300, 0 0 20px #f8c300; /* Світіння */
 }
 
+h1#page-title {
+    margin-bottom: 10px;
+}
 
 #modal {
     position: fixed;
