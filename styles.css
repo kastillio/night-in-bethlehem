@@ -57,11 +57,13 @@ h1 {
 }
 
 .station-image {
-    width: auto; /* Динамічна ширина */
-    height: 80px; /* Висота іконки */
-    object-fit: contain; /* Зберігаємо пропорції без обрізки */
-    margin-bottom: 10px; /* Відступ між картинкою та текстом */
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Зберігаємо пропорції */
+    margin: 0 auto 10px auto; /* Вирівнюємо по центру */
+    display: block; /* Блочний елемент */
 }
+
 
 
 .station-item:hover {
