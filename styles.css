@@ -173,6 +173,10 @@ h1 {
     margin-top: 20px;
 }
 
+#page-title-container {
+    background: none; /* Прибираємо фонове зображення */
+    box-shadow: none; /* Якщо є тінь, видаляємо її */
+}
 
 
 #location-list {
