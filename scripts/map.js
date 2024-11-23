@@ -87,6 +87,7 @@ const stationData = {
     },
     // Інші станції...
 
+    
 
 // Оновлення тексту у модальному вікні
 function updateModalText(station) {
