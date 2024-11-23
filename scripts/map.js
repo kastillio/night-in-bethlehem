@@ -9,7 +9,7 @@ const textData = {
         'bakery': { name: "Пекарня", description: "Як виготовляли хліб у давні часи?" },
         'spices': { name: "Магазин спецій", description: "Що могли розповісти спеції про людей?" },
         'wise-men': { name: "Мудреці", description: "Що мудреці принесли до Вифлеєму і чому це було важливо?" },
-        'stable': { name: "Стайня", description: "Дізнайтеся, чому саме стайня стала колискою для Ісуса." },
+        'stable': { name: "Стайня", description: "Дізнайтеся, як створювали одяг у стародавні часи, та виберіть костюм для фотозони!" },
         'photo-zone': { name: "Фотозона", description: "Зробіть фото, яке збереже цю мить!" }
     },
     en: {
@@ -77,6 +77,20 @@ const stationData = {
         description: "Дізнайтеся, як створювали одяг у стародавні часи, та виберіть костюм для фотозони!",
         image: "images/clothing-making.png"
     },
+const stationData = {
+    spinningWheel: {
+        title: {
+            uk: "Прядильне колесо",
+            en: "Spinning Wheel"
+        },
+        description: {
+            uk: "Діти дізнаються, як використовували прядильне колесо у стародавні часи для виготовлення одягу.",
+            en: "Children will learn how the spinning wheel was used in ancient times to make clothing."
+        },
+        image: "images/spinning-wheel.png"
+    },
+    // Інші станції...
+};
 
 // Оновлення тексту у модальному вікні
 function updateModalText(station) {
