@@ -71,12 +71,7 @@ function closeModal() {
     const modal = document.getElementById("modal");
     modal.classList.remove("show");
 }
-const stationData = {
-    clothing: {
-        title: "Виготовлення одягу",
-        description: "Дізнайтеся, як створювали одяг у стародавні часи, та виберіть костюм для фотозони!",
-        image: "images/clothing-making.png"
-    },
+
 const stationData = {
     spinningWheel: {
         title: {
