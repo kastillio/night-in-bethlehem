@@ -94,22 +94,14 @@ h1 {
 
 
 #language-buttons {
-    position: fixed; /* Фіксуємо зверху */
-    top: 20px; /* Відступ зверху */
-    left: 50%; /* Центрування за горизонталлю */
-    transform: translateX(-50%); /* Центрування */
-    display: flex; /* Для горизонтального розташування */
-    gap: 15px; /* Відстань між кнопками */
-    z-index: 1000; /* Виводимо кнопки поверх усіх елементів */
-    background: rgba(0, 0, 0, 0.7); /* Напівпрозорий чорний фон */
-    padding: 10px 20px; /* Відступи всередині блоку */
-    border-radius: 10px; /* Закруглені краї */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Легка тінь */
+    display: flex; /* Розташування кнопок у ряд */
+    justify-content: center; /* Центрування кнопок */
+    gap: 10px; /* Відстань між кнопками */
+    background: transparent; /* Прибираємо фон */
+    box-shadow: none; /* Прибираємо тіні */
+    padding: 10px 0; /* Додаємо трохи відступів зверху і знизу */
 }
-#language-buttons {
-    background: none; /* Прибираємо фон у кнопок */
-    box-shadow: none; /* Забираємо тінь (якщо потрібно) */
-}
+
 
 #language-buttons button {
     padding: 10px 15px; /* Внутрішній відступ */
