@@ -97,6 +97,14 @@ function updateModalText(station) {
         ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
         : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
 }
+function submitFeedback() {
+    const feedback = document.getElementById("feedback").value;
+    if (feedback) {
+        alert("Дякуємо за ваш відгук!");
+    } else {
+        alert("Будь ласка, залиште коментар.");
+    }
+}
 
 // Функція для перемикання статусу станції
 function toggleCompletion() {
