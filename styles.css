@@ -167,15 +167,6 @@ h1 {
     margin-top: 20px;
 }
 
-#page-title-container {
-    background: none; /* Прибираємо фонове зображення */
-    box-shadow: none; /* Якщо є тінь, видаляємо її */
-}
-
-#page-title-container {
-    background: none !important; /* Прибираємо фон точно */
-    background-color: transparent !important; /* Прозорий фон */
-}
 
 #language-buttons {
     background: none !important; /* Видаляємо будь-який фон */
@@ -264,7 +255,7 @@ h1 {
     color: #ff0000;
 }
 .station-item {
-    display: inline-block;
+    
     width: 120px;
     height: 140px;
     margin: 10px;
