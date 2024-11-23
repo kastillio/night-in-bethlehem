@@ -109,16 +109,17 @@ function toggleCompletion() {
     const station = modal.dataset.station;
     const button = document.querySelector(`.station-item[onclick="openModal('${station}')"]`);
 
+    // Змінюємо статус
     stationStatus[station] = !stationStatus[station];
 
-    // Оновлення статусу кнопки
+    // Додаємо або видаляємо клас `completed`
     if (stationStatus[station]) {
         button.classList.add("completed");
     } else {
         button.classList.remove("completed");
     }
 
-    // Оновлення тексту у модальному вікні
+    // Оновлюємо текст у модальному вікні
     updateModalText(station);
 }
 
