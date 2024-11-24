@@ -323,3 +323,42 @@ h1#page-title {
     transform: scale(0.95); /* Легке зменшення */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Менша тінь */
 }
+#feedback-section {
+    margin: 20px auto;
+    text-align: center;
+}
+
+#feedback-title {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#feedback-textarea {
+    width: 80%;
+    max-width: 600px;
+    height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#feedback-submit {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#feedback-submit:hover {
+    background-color: #e59400;
+}
