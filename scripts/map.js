@@ -290,5 +290,52 @@ function showQuizModal() {
     quizModal.classList.add("quiz-visible");
     displayQuestion();
 }
+function closeQuizModal() {
+    const quizModal = document.getElementById("quiz-modal");
+    quizModal.classList.remove("quiz-visible");
+    currentQuestionIndex = 0; // Скидаємо індекс питання
+}
+function displayQuestion() {
+    const questionData = quizData[currentQuestionIndex];
+    const currentLang = currentLanguage;
+
+    // Оновлюємо текст питання
+    document.getElementById("quiz-question").textContent = questionData.question[currentLang];
+
+    // Створюємо варіанти відповідей
+    const optionsContainer = document.getElementById("quiz-options");
+    optionsContainer.innerHTML = ""; // Очищаємо попередні варіанти
+    questionData.options[currentLang].forEach((option, index) => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.onclick = () => checkAnswer(index);
+        optionsContainer.appendChild(button);
+    });
+
+    // Приховуємо кнопку "Наступне питання"
+    document.getElementById("next-question").style.display = "none";
+}
+function checkAnswer(selectedIndex) {
+    const questionData = quizData[currentQuestionIndex];
+    const correctIndex = questionData.correct;
+
+    if (selectedIndex === correctIndex) {
+        alert(currentLanguage === "uk" ? "Правильно!" : "Correct!");
+    } else {
+        alert(currentLanguage === "uk" ? "Неправильно. Спробуйте ще раз!" : "Incorrect. Try again!");
+    }
+
+    // Показуємо кнопку "Наступне питання"
+    document.getElementById("next-question").style.display = "block";
+}
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizData.length) {
+        displayQuestion();
+    } else {
+        alert(currentLanguage === "uk" ? "Вікторина завершена!" : "Quiz completed!");
+        closeQuizModal();
+    }
+}
 
 });
