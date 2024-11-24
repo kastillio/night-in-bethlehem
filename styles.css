@@ -280,10 +280,9 @@ h1#page-title {
 
 
 
-/* Стиль для тексту станції (station-label) */
 .station-label {
     position: absolute;
-    top: 10px; /* Текст знаходиться у верхній частині */
+    bottom: 10px; /* Розташування тексту внизу */
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
@@ -293,13 +292,14 @@ h1#page-title {
     padding: 5px 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* Завжди поверх зображення */
     text-align: center;
-    max-width: 90%; /* Обмеження ширини тексту */
-    white-space: nowrap; /* Текст не переноситься на новий рядок */
-    overflow: hidden; /* Обрізання зайвого тексту */
-    text-overflow: ellipsis; /* Три крапки для довгого тексту */
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 5; /* Забезпечує, що текст завжди поверх іконки */
 }
+
 
 
 
