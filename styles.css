@@ -44,52 +44,45 @@ h1 {
     margin-top: 20px;
 }
 
+/* Стиль для станції (станції мають прозорий фон) */
 .station-item {
-    width: 120px; /* Фіксована ширина іконок */
-    height: 140px; /* Фіксована висота */
-    background-color: #ffd54f;
-    border: 2px solid #e0a800;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.station-image {
-    width: 80px; /* Фіксована ширина */
-    height: 80px; /* Фіксована висота */
-    object-fit: contain; /* Пропорційне масштабування */
-    margin-bottom: 10px; /* Відступ між іконкою та текстом */
-}
-
-
-
-.station-item:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s;
-}
-
-.station-item:active {
-    transform: scale(1.2);
-}
-
-.station-item {
-    position: relative; /* Додаємо відносне позиціонування */
-    width: 120px; /* Розмір картки */
+    position: relative;
+    width: 120px;
     height: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.8); /* Напівпрозорий фон */
     border: 2px solid #ffa500;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
 }
+
+/* Ефект при наведенні */
+.station-item:hover {
+    background-color: rgba(255, 204, 0, 0.9); /* Жовтий фон */
+    transform: scale(1.05); /* Легке збільшення */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Більш виразна тінь */
+}
+
+/* Стиль для зображення */
+.station-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; /* Збереження пропорцій */
+    border-radius: 5px; /* Легке закруглення */
+    transition: transform 0.3s ease; /* Анімація на зображенні */
+}
+
+/* Ефект на зображенні при наведенні */
+.station-item:hover .station-image {
+    transform: scale(1.1); /* Легке збільшення зображення */
+}
+
 
 
 
