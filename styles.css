@@ -305,8 +305,8 @@ h1#page-title {
 
 /* Зображення станції */
 .station-image {
-    width: 100px; /* Розмір іконки */
-    height: 100px;
+    width: 120px; /* Розмір іконки */
+    height: 120px;
     object-fit: cover; /* Заповнення контейнера без обрізки */
     margin-top: 20px; /* Відступ від тексту */
     border-radius: 10px; /* Легке закруглення для зображення */
