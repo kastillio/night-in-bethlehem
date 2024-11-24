@@ -76,7 +76,6 @@ document.getElementById('feedback-submit').addEventListener('click', function ()
 });
 
 
-
 // Інші функції, наприклад, виклики showQuizModal, showFeedbackModal
 
     // Оновлення текстів на кнопках станцій
