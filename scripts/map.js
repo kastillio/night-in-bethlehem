@@ -63,17 +63,18 @@ function updateFeedbackLanguage() {
 // Обробник для кнопки Submit
 document.getElementById('feedback-submit').addEventListener('click', function () {
     const feedbackTextarea = document.getElementById('feedback-textarea'); // Отримуємо текстове поле
-    const feedback = feedbackTextarea.value.trim(); // Отримуємо текст
+    const feedback = feedbackTextarea.value.trim(); // Видаляємо зайві пробіли
 
     if (feedback) {
-        // Відображення повідомлення успіху
-        alert(currentLanguage === 'uk' ? 'Дякуємо за ваш відгук!' : 'Thank you for your feedback!');
-        feedbackTextarea.value = ''; // Очищуємо поле після успішного відправлення
+        // Відображаємо повідомлення про успіх
+        alert('Дякуємо за ваш відгук!'); // Ви можете додати переклад на інші мови
+        feedbackTextarea.value = ''; // Очищуємо текстове поле
     } else {
-        // Якщо текстове поле порожнє, відобразити помилку
-        alert(currentLanguage === 'uk' ? 'Будь ласка, напишіть свій відгук.' : 'Please write your feedback.');
+        // Якщо текстове поле порожнє
+        alert('Будь ласка, напишіть свій відгук.');
     }
 });
+
 
 
 // Інші функції, наприклад, виклики showQuizModal, showFeedbackModal
