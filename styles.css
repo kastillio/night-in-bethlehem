@@ -76,6 +76,20 @@ h1 {
     transform: scale(1.2);
 }
 
+.station-item {
+    position: relative; /* Додаємо відносне позиціонування */
+    width: 120px; /* Розмір картки */
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ffa500;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
 
 
 
