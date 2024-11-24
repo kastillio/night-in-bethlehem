@@ -41,6 +41,32 @@ const feedbackText = {
         error: "Please write your feedback before submitting!"
     }
 };
+// Дані для вікторини
+const quizData = [
+    {
+        question: {
+            uk: "Де народився Ісус?",
+            en: "Where was Jesus born?"
+        },
+        options: {
+            uk: ["Вифлеєм", "Єрусалим", "Назareth", "Капернаум"],
+            en: ["Bethlehem", "Jerusalem", "Nazareth", "Capernaum"]
+        },
+        correct: 0 // Індекс правильної відповіді
+    },
+    {
+        question: {
+            uk: "Хто повідомив пастухам про народження Ісуса?",
+            en: "Who told the shepherds about Jesus' birth?"
+        },
+        options: {
+            uk: ["Цар", "Ангел", "Мудреці", "Йосип"],
+            en: ["King", "Angel", "Wise Men", "Joseph"]
+        },
+        correct: 1
+    }
+    // Додайте ще питання...
+];
 
 // Глобальні змінні
 let currentLanguage = 'uk'; // Поточна мова
