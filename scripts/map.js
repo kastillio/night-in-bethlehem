@@ -25,6 +25,22 @@ const textData = {
         'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" }
     }
 };
+const feedbackText = {
+    uk: {
+        title: "Залиште ваш відгук:",
+        placeholder: "Напишіть свій відгук тут...",
+        button: "Відправити",
+        success: "Дякуємо за ваш відгук!",
+        error: "Будь ласка, напишіть свій відгук перед відправленням!"
+    },
+    en: {
+        title: "Leave your feedback:",
+        placeholder: "Write your feedback here...",
+        button: "Submit",
+        success: "Thank you for your feedback!",
+        error: "Please write your feedback before submitting!"
+    }
+};
 
 // Глобальні змінні
 let currentLanguage = 'uk'; // Поточна мова
