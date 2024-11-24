@@ -283,4 +283,12 @@ document.getElementById("modal").addEventListener("click", (event) => {
     if (event.target.id === "modal") {
         closeModal();
     }
+    let currentQuestionIndex = 0; // Індекс поточного питання
+
+function showQuizModal() {
+    const quizModal = document.getElementById("quiz-modal");
+    quizModal.classList.add("quiz-visible");
+    displayQuestion();
+}
+
 });
