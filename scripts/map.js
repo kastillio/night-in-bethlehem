@@ -55,6 +55,62 @@ function showQuestion() {
         alert("Спробуй ще раз!");
     }
 }
+function updateFeedbackModalLanguage() {
+    const feedbackModal = document.getElementById("feedback-modal");
+    const currentTexts = feedbackText[currentLanguage];
+
+    document.getElementById("feedback-title").textContent = currentTexts.title;
+    document.getElementById("feedback-textarea").placeholder = currentTexts.placeholder;
+    document.getElementById("feedback-submit").textContent = currentTexts.button;
+}
+function submitFeedback() {
+    const feedbackTextarea = document.getElementById("feedback-textarea");
+    const feedbackTextValue = feedbackTextarea.value.trim();
+
+    if (!feedbackTextValue) {
+        alert(feedbackText[currentLanguage].error);
+        return;
+    }
+function showFeedbackModal() {
+    const feedbackModal = document.getElementById("feedback-modal");
+    feedbackModal.classList.remove("feedback-hidden");
+    feedbackModal.classList.add("feedback-visible");
+    updateFeedbackModalLanguage(); // Оновлюємо тексти залежно від мови
+}
+function changeLanguage(lang) {
+    currentLanguage = lang;
+
+    // Оновлення текстів на кнопках станцій
+    document.querySelectorAll('.station-item').forEach(button => {
+        const station = button.getAttribute('onclick').match(/'(.+)'/)[1];
+        const stationText = textData[currentLanguage][station]?.name || "Unknown";
+        button.querySelector('.station-label').textContent = stationText;
+    });
+
+    // Оновлення заголовка
+    const title = document.getElementById('page-title');
+    title.textContent = currentLanguage === 'uk'
+        ? 'Інтерактивна Карта "Ніч у Вифлеємі"'
+        : 'Interactive Map "Night in Bethlehem"';
+
+    // Оновлення текстів у відгуках
+    updateFeedbackModalLanguage();
+}
+
+    // Збереження відгуку в LocalStorage
+    const feedbacks = JSON.parse(localStorage.getItem("feedbacks") || "[]");
+    feedbacks.push(feedbackTextValue);
+    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+
+    // Очистити текстове поле
+    feedbackTextarea.value = "";
+
+    // Закрити модальне вікно
+    hideFeedbackModal();
+
+    // Підтвердження
+    alert(feedbackText[currentLanguage].success);
+}
 
 // Функція для зміни мови
 function changeLanguage(lang) {
