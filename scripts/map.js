@@ -217,4 +217,10 @@ document.getElementById("modal").addEventListener("click", (event) => {
     if (event.target.id === "modal") {
         closeModal();
     }
+ // Ініціалізація мови при завантаженні сторінки
+document.addEventListener("DOMContentLoaded", () => {
+    // Установлюємо поточну мову як українську за замовчуванням
+    changeLanguage('uk');
+});
+
 });
