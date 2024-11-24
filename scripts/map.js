@@ -1,20 +1,7 @@
  // Дані для різних мов
 const textData = {
  
-    uk: {
-        // ...існуючі дані
-        thankYouMessage: "Дякуємо за ваш відгук!",
-        emptyFeedbackMessage: "Будь ласка, напишіть свій відгук."
-    },
-    en: {
-        // ...існуючі дані
-        thankYouMessage: "Thank you for your feedback!",
-        emptyFeedbackMessage: "Please write your feedback."
-    }
-
-};
-
-    uk: {
+      uk: {
         'shepherds': { name: "Пастухи", description: "Пастухи були першими, хто почув Добру Новину. Дізнайтеся, чому Бог обрав саме їх!" },
         'registration': { name: "Реєстрація", description: "Дізнайтеся, чому Йосип і Марія поїхали до Вифлеєму." },
         'carpenter': { name: "Цех тесляра", description: "Які секрети приховує ремесло теслі?" },
@@ -38,6 +25,19 @@ const textData = {
         'spinning-wheel': { name: " Spinning Wheel", description: "Learn how clothes were made in ancient times and choose a costume for the photo booth!" },
         'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" }
     }
+ const textData = {
+    uk: {
+        // ...існуючі дані
+        thankYouMessage: "Дякуємо за ваш відгук!",
+        emptyFeedbackMessage: "Будь ласка, напишіть свій відгук."
+    },
+    en: {
+        // ...існуючі дані
+        thankYouMessage: "Thank you for your feedback!",
+        emptyFeedbackMessage: "Please write your feedback."
+    }
+};
+
 };
 
 // Глобальні змінні
