@@ -302,13 +302,7 @@ h1#page-title {
 }
 
 
-.station-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-top: 20px;
-}
+
 .complete-button {
     margin-top: 15px;
     padding: 10px 20px;
