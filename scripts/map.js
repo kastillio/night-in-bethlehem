@@ -151,6 +151,23 @@ function submitFeedback() {
         alert(errorMessage);
     }
 }
+function updateFeedbackLanguage() {
+    const feedbackTitle = document.getElementById('feedback-title');
+    const feedbackTextarea = document.getElementById('feedback-textarea');
+    const feedbackSubmit = document.getElementById('feedback-submit');
+
+    feedbackTitle.textContent = currentLanguage === 'uk'
+        ? 'Залиште ваш відгук:'
+        : 'Leave your feedback:';
+
+    feedbackTextarea.placeholder = currentLanguage === 'uk'
+        ? 'Напишіть свій відгук тут...'
+        : 'Write your feedback here...';
+
+    feedbackSubmit.textContent = currentLanguage === 'uk'
+        ? 'Відправити'
+        : 'Submit';
+}
 
 // Збереження відгуків у localStorage
 function saveFeedbackToLocalStorage(feedback) {
