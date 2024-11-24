@@ -121,6 +121,45 @@ function submitFeedback() {
         alert("Будь ласка, залиште коментар.");
     }
 }
+// Функція для відкриття модального вікна
+function showFeedbackModal() {
+    const feedbackModal = document.getElementById("feedback-modal");
+    feedbackModal.classList.remove("feedback-hidden");
+    feedbackModal.classList.add("feedback-visible");
+}
+
+// Функція для закриття модального вікна
+function hideFeedbackModal() {
+    const feedbackModal = document.getElementById("feedback-modal");
+    feedbackModal.classList.remove("feedback-visible");
+    feedbackModal.classList.add("feedback-hidden");
+}
+
+// Функція для обробки відправки відгуку
+function submitFeedback() {
+    const feedbackTextarea = document.getElementById("feedback-textarea");
+    const feedbackText = feedbackTextarea.value.trim();
+
+    if (!feedbackText) {
+        alert("Будь ласка, напишіть свій відгук перед відправленням!");
+        return;
+    }
+
+    // Збереження відгуку або виконання іншої логіки
+    console.log("Ваш відгук:", feedbackText);
+
+    // Очищення поля
+    feedbackTextarea.value = "";
+
+    // Закриття модального вікна
+    hideFeedbackModal();
+
+    // Підтвердження
+    alert("Дякуємо за ваш відгук!");
+}
+
+// Додавання обробника події до кнопки
+document.getElementById("feedback-submit").addEventListener("click", submitFeedback);
 
 // Функція для перемикання статусу станції
 function toggleCompletion() {
