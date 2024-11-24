@@ -58,6 +58,22 @@ function updateFeedbackLanguage() {
         feedbackSubmit.textContent = 'Submit';
     }
 }
+// Інші функції, наприклад, changeLanguage, openModal
+
+// Обробник події для кнопки "Відправити"
+document.getElementById('feedback-submit').addEventListener('click', function() {
+    const feedbackTextarea = document.getElementById('feedback-textarea');
+    const feedback = feedbackTextarea.value.trim();
+
+    if (feedback) {
+        alert(currentLanguage === 'uk' ? 'Дякуємо за ваш відгук!' : 'Thank you for your feedback!');
+        feedbackTextarea.value = ''; // Очищуємо поле
+    } else {
+        alert(currentLanguage === 'uk' ? 'Будь ласка, напишіть свій відгук.' : 'Please write your feedback.');
+    }
+});
+
+// Інші функції, наприклад, виклики showQuizModal, showFeedbackModal
 
     // Оновлення текстів на кнопках станцій
     document.querySelectorAll('.station-item').forEach(button => {
@@ -153,17 +169,7 @@ function toggleCompletion() {
     // Оновлення тексту у модальному вікні
     updateModalText(station);
 }
-document.getElementById('feedback-submit').addEventListener('click', function() {
-    const feedbackTextarea = document.getElementById('feedback-textarea');
-    const feedback = feedbackTextarea.value.trim();
 
-    if (feedback) {
-        alert(currentLanguage === 'uk' ? 'Дякуємо за ваш відгук!' : 'Thank you for your feedback!');
-        feedbackTextarea.value = ''; // Очищуємо поле
-    } else {
-        alert(currentLanguage === 'uk' ? 'Будь ласка, напишіть свій відгук.' : 'Please write your feedback.');
-    }
-});
 
 // Закриття модального вікна при кліці на фон
 document.getElementById("modal").addEventListener("click", (event) => {
