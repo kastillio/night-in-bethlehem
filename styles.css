@@ -375,4 +375,71 @@ h1#page-title {
     padding: 5px 10px;
     border-bottom: 1px solid #eee;
 }
+/* Стилізація модального вікна */
+#feedback-modal {
+    position: fixed;
+    bottom: 30px; /* Відступ від нижнього краю */
+    left: 50%; /* Центруємо модальне вікно */
+    transform: translateX(-50%); /* Центрування по горизонталі */
+    width: 90%; /* Ширина модального вікна */
+    max-width: 400px; /* Максимальна ширина */
+    background: rgba(255, 255, 255, 0.95); /* Напівпрозорий білий фон */
+    border: 1px solid #ccc; /* Тонкий бордюр */
+    border-radius: 10px; /* Закруглені краї */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тінь */
+    padding: 20px; /* Відступи всередині */
+    z-index: 1000; /* Виведення на передній план */
+}
+
+/* Заголовок вікна */
+#feedback-modal h3 {
+    margin-top: 0;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+}
+
+/* Текстове поле */
+#feedback-textarea {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    resize: none; /* Забороняємо змінювати розмір вручну */
+    box-sizing: border-box;
+}
+
+/* Кнопка відправки */
+#feedback-submit {
+    display: block;
+    width: 100%;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Ефекти при наведенні на кнопку */
+#feedback-submit:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Легке збільшення */
+}
+
+/* Сховане модальне вікно */
+.feedback-hidden {
+    display: none;
+}
+
+/* Видиме модальне вікно */
+.feedback-visible {
+    display: block;
+}
 
