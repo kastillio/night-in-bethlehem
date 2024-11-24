@@ -273,20 +273,27 @@ h1#page-title {
 
 
 
+/* Стиль для тексту станції (station-label) */
 .station-label {
     position: absolute;
-    bottom: 10px; /* Розташування тексту внизу іконки */
+    top: 10px; /* Текст знаходиться у верхній частині */
     left: 50%;
     transform: translateX(-50%);
-    font 0, 0, 0.1);
-    z-index: 10; /* Завжди поверх іконки */
-    display: block; /* Текст завжди видимий */
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9); /* Напівпрозорий білий фон */
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Завжди поверх зображення */
     text-align: center;
-    max-width: 90%; /* Щоб текст не виходив за межі іконки */
-    white-space: nowrap; /* Запобігаємо переносу тексту */
-    overflow: hidden; /* Ховаємо зайвий текст */
-    text-overflow: ellipsis; /* Додаємо три крапки для довгих текстів */
+    max-width: 90%; /* Обмеження ширини тексту */
+    white-space: nowrap; /* Текст не переноситься на новий рядок */
+    overflow: hidden; /* Обрізання зайвого тексту */
+    text-overflow: ellipsis; /* Три крапки для довгого тексту */
 }
+
 
 .station-image {
     width: 100px;
