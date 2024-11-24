@@ -57,7 +57,8 @@
             <div class="station-label">Мудреці</div>
             <img src="images/wise-men.png" alt="Wise Men" class="station-image">
         </button>
-          <button class="station-item" onclick="openModal('spinning-wheel')">
+         <!-- Інші станції -->
+ <button class="station-item" onclick="openModal('spinning-wheel')">
     <div class="station-label">Прядильне колесо</div>
     <img src="images/spinning-wheel.png" alt="Spinning Wheel" class="station-image">
 
@@ -66,48 +67,7 @@
             <div class="station-label">Фотозона</div>
             <img src="images/photo-zone.png" alt="Photo Zone" class="station-image">
         </button>
-    <button onclick="showQuizModal()" style="margin-top: 20px; background-color: #ffa500; color: white; border: none; padding: 15px 30px; border-radius: 5px; font-size: 16px; cursor: pointer;">
-    Почати вікторину
-</button>
-
-    <button onclick="showFeedbackModal()" style="margin-top: 20px; background-color: #ffa500; color: white; border: none; padding: 15px 30px; border-radius: 5px; font-size: 16px; cursor: pointer;">
-    Написати відгук
-</button>
-<!-- Модальне вікно вікторини -->
-<div id="quiz-modal" class="quiz-hidden">
-    <div class="quiz-content">
-        <!-- Кнопка закриття -->
-        <button class="close-quiz" onclick="closeQuizModal()">×</button>
-        <!-- Питання -->
-        <h3 id="quiz-question">Питання</h3>
-        <!-- Варіанти відповідей -->
-        <div id="quiz-options">
-            <!-- Кнопки будуть додані через JavaScript -->
-        </div>
-        <!-- Кнопка для наступного питання -->
-        <button id="next-question" onclick="nextQuestion()">Наступне питання</button>
     </div>
-</div>
-
-   <div id="feedback-modal" class="feedback-hidden">
-    <div class="feedback-content">
-        <button class="close-feedback" onclick="hideFeedbackModal()">×</button>
-        <h3 id="feedback-title">Залиште ваш відгук:</h3>
-        <textarea id="feedback-textarea" placeholder="Напишіть свій відгук тут..." rows="4"></textarea>
-        <button id="feedback-submit">Відправити</button>
-    </div>
-</div>
-
-</button>
-
-    </div>
-<div id="feedback-modal" class="feedback-hidden">
-    <div class="feedback-content">
-        <h3>Залиште ваш відгук:</h3>
-        <textarea id="feedback-textarea" placeholder="Напишіть свій відгук тут..." rows="4"></textarea>
-        <button id="feedback-submit">Відправити</button>
-    </div>
-</div>
 
     <div id="modal" class="hidden">
     <div id="modal-content">
@@ -119,7 +79,8 @@
 
     </div>
 </div>
-
+<textarea id="feedback" placeholder="Напишіть, що вам сподобалося!"></textarea>
+<button onclick="submitFeedback()">Відправити</button>
 
     <script src="scripts/map.js"></script>
 </body>
