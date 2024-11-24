@@ -24,19 +24,10 @@ const textData = {
         'wise-men': { name: "Wise Men", description: "What gifts did the Wise Men bring, and why were they significant?" },
         'spinning-wheel': { name: " Spinning Wheel", description: "Learn how clothes were made in ancient times and choose a costume for the photo booth!" },
         'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" }
+  
     }
- const textData = {
-    uk: {
-        // ...існуючі дані
-        thankYouMessage: "Дякуємо за ваш відгук!",
-        emptyFeedbackMessage: "Будь ласка, напишіть свій відгук."
-    },
-    en: {
-        // ...існуючі дані
-        thankYouMessage: "Thank you for your feedback!",
-        emptyFeedbackMessage: "Please write your feedback."
-    }
-};
+ 
+ 
 
 };
 
