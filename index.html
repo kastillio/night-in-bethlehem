@@ -66,8 +66,15 @@
             <div class="station-label">Фотозона</div>
             <img src="images/photo-zone.png" alt="Photo Zone" class="station-image">
         </button>
-    <button onclick="showFeedbackModal()" style="margin-top: 20px; background-color: #ffa500; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-    Написати відгук
+   <div id="feedback-modal" class="feedback-hidden">
+    <div class="feedback-content">
+        <button class="close-feedback" onclick="hideFeedbackModal()">×</button>
+        <h3 id="feedback-title">Залиште ваш відгук:</h3>
+        <textarea id="feedback-textarea" placeholder="Напишіть свій відгук тут..." rows="4"></textarea>
+        <button id="feedback-submit">Відправити</button>
+    </div>
+</div>
+
 </button>
 
     </div>
