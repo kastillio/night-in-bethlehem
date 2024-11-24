@@ -93,7 +93,7 @@ document.getElementById('feedback-submit').addEventListener('click', function ()
 
     // Оновлення тексту у відгуках
     updateFeedbackLanguage();
-}
+
 
 
 // Функція для відкриття модального вікна
