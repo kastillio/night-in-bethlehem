@@ -334,4 +334,45 @@ h1#page-title {
     color: #ff0000;
     transform: scale(1.2);
 }
+/* Поле вводу для відгуків */
+#feedback-input {
+    border: 1px solid #ffc107; /* Жовтий бордер */
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Кнопка відправки відгуків */
+#modal-content button {
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#modal-content button:hover {
+    background-color: #ffa000; /* Темніший жовтий */
+}
+
+/* Список відгуків */
+#feedback-list {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9; /* Світлий фон */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+#feedback-list li {
+    padding: 5px 10px;
+    border-bottom: 1px solid #eee;
+}
 
