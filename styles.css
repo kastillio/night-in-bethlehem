@@ -279,7 +279,7 @@ h1#page-title {
     align-items: center; /* Горизонтальне центрування */
     justify-content: flex-start; /* Вертикальне вирівнювання згори */
     text-align: center; /* Текст по центру */
-    background-color: #fff; /* Білий фон для кожної картки */
+   
     border: 2px solid #ffa500; /* Помаранчева рамка */
     border-radius: 10px; /* Закруглені кути */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тінь для картки */
