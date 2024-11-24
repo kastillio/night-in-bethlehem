@@ -95,6 +95,24 @@ function updateModalText(station) {
         ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
         : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
 }
+// Завантаження відгуків із LocalStorage
+function loadFeedbackFromLocalStorage() {
+    const storedData = localStorage.getItem("feedbackData");
+    if (storedData) {
+        feedbackData = JSON.parse(storedData);
+    }
+}
+
+// Збереження відгуків у LocalStorage
+function saveFeedbackToLocalStorage() {
+    localStorage.setItem("feedbackData", JSON.stringify(feedbackData));
+}
+
+// Викликаємо завантаження відгуків при старті сторінки
+window.onload = () => {
+    loadFeedbackFromLocalStorage();
+};
+
 function submitFeedback() {
     const feedback = document.getElementById("feedback").value;
     if (feedback) {
