@@ -324,27 +324,22 @@ h1#page-title {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Менша тінь */
 }
 #feedback-section {
-    margin: 20px auto;
     text-align: center;
+    margin-top: 30px;
 }
 
 #feedback-title {
-    font-size: 20px;
-    color: #fff;
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 #feedback-textarea {
     width: 80%;
-    max-width: 600px;
-    height: 100px;
-    margin: 10px 0;
+    max-width: 500px;
     padding: 10px;
-    border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 16px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
 #feedback-submit {
@@ -354,11 +349,9 @@ h1#page-title {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
 }
 
 #feedback-submit:hover {
-    background-color: #e59400;
+    background-color: #e09500;
 }
