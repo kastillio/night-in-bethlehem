@@ -464,3 +464,72 @@ h1#page-title {
     display: block;
 }
 
+/* Модальне вікно вікторини */
+#quiz-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+}
+
+/* Активне модальне вікно */
+.quiz-visible {
+    display: block;
+}
+
+/* Заголовок питання */
+#quiz-modal h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Варіанти відповідей */
+#quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#quiz-options button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#quiz-options button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Кнопка "Наступне питання" */
+#next-question {
+    display: none; /* Спочатку прихована */
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#next-question:hover {
+    background-color: #45a049;
+}
