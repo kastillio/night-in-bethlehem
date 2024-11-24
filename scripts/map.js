@@ -240,8 +240,8 @@ document.getElementById("modal").addEventListener("click", (event) => {
     }
  // Ініціалізація мови при завантаженні сторінки
 document.addEventListener("DOMContentLoaded", () => {
-    // Установлюємо поточну мову як українську за замовчуванням
-    changeLanguage('uk');
+    console.log("Сторінка завантажена, мова за замовчуванням встановлена.");
+    changeLanguage('uk'); // Мова за замовчуванням
 });
 
 });
