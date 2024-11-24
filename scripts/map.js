@@ -12,6 +12,7 @@ const textData = {
         emptyFeedbackMessage: "Please write your feedback."
     }
 
+};
 
     uk: {
         'shepherds': { name: "Пастухи", description: "Пастухи були першими, хто почув Добру Новину. Дізнайтеся, чому Бог обрав саме їх!" },
