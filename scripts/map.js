@@ -127,32 +127,48 @@ function updateModalText(station) {
         ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
         : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
 }
-// Завантаження відгуків із LocalStorage
-function loadFeedbackFromLocalStorage() {
-    const storedData = localStorage.getItem("feedbackData");
-    if (storedData) {
-        feedbackData = JSON.parse(storedData);
+function submitFeedback() {
+    const feedbackTextarea = document.getElementById('feedback-textarea'); // Отримуємо текстове поле
+    const feedback = feedbackTextarea.value.trim(); // Видаляємо зайві пробіли
+
+    if (feedback) {
+        // Збереження у localStorage
+        saveFeedbackToLocalStorage(feedback);
+
+        // Відображаємо повідомлення про успіх
+        const thankYouMessage = currentLanguage === 'uk'
+            ? 'Дякуємо за ваш відгук!'
+            : 'Thank you for your feedback!';
+        alert(thankYouMessage);
+
+        // Очищення текстового поля
+        feedbackTextarea.value = '';
+    } else {
+        // Якщо текстове поле порожнє
+        const errorMessage = currentLanguage === 'uk'
+            ? 'Будь ласка, напишіть свій відгук.'
+            : 'Please write your feedback.';
+        alert(errorMessage);
     }
 }
 
-// Збереження відгуків у LocalStorage
-function saveFeedbackToLocalStorage() {
-    localStorage.setItem("feedbackData", JSON.stringify(feedbackData));
+// Збереження відгуків у localStorage
+function saveFeedbackToLocalStorage(feedback) {
+    const feedbackData = JSON.parse(localStorage.getItem('feedbackData')) || [];
+    feedbackData.push(feedback);
+    localStorage.setItem('feedbackData', JSON.stringify(feedbackData));
+}
+
+// Завантаження відгуків із localStorage
+function loadFeedbackFromLocalStorage() {
+    const storedData = JSON.parse(localStorage.getItem('feedbackData')) || [];
+    console.log('Завантажені відгуки:', storedData); // Для перевірки
 }
 
 // Викликаємо завантаження відгуків при старті сторінки
 window.onload = () => {
     loadFeedbackFromLocalStorage();
 };
-
-function submitFeedback() {
-    const feedback = document.getElementById("feedback").value;
-    if (feedback) {
-        alert("Дякуємо за ваш відгук!");
-    } else {
-        alert("Будь ласка, залиште коментар.");
-    }
-}
 
 // Функція для перемикання статусу станції
 function toggleCompletion() {
