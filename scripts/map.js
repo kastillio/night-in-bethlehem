@@ -211,6 +211,27 @@ function toggleCompletion() {
     updateModalText(station);
 }
 
+document.getElementById('feedback-submit').addEventListener('click', function () {
+    const feedbackTextarea = document.getElementById('feedback-textarea'); // Отримуємо текстове поле
+    const feedback = feedbackTextarea.value.trim(); // Видаляємо зайві пробіли
+
+    if (feedback) {
+        // Відображаємо повідомлення про успіх залежно від мови
+        if (currentLanguage === 'uk') {
+            alert('Дякуємо за ваш відгук!');
+        } else if (currentLanguage === 'en') {
+            alert('Thank you for your feedback!');
+        }
+        feedbackTextarea.value = ''; // Очищуємо текстове поле
+    } else {
+        // Якщо текстове поле порожнє, показуємо повідомлення залежно від мови
+        if (currentLanguage === 'uk') {
+            alert('Будь ласка, напишіть свій відгук.');
+        } else if (currentLanguage === 'en') {
+            alert('Please write your feedback.');
+        }
+    }
+});
 
 // Закриття модального вікна при кліці на фон
 document.getElementById("modal").addEventListener("click", (event) => {
