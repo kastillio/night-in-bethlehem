@@ -43,6 +43,21 @@ function showQuestion() {
 // Функція для зміни мови
 function changeLanguage(lang) {
     currentLanguage = lang;
+function updateFeedbackLanguage() {
+    const feedbackTitle = document.getElementById('feedback-title');
+    const feedbackTextarea = document.getElementById('feedback-textarea');
+    const feedbackSubmit = document.getElementById('feedback-submit');
+
+    if (currentLanguage === 'uk') {
+        feedbackTitle.textContent = 'Залиште ваш відгук:';
+        feedbackTextarea.placeholder = 'Напишіть свій відгук тут...';
+        feedbackSubmit.textContent = 'Відправити';
+    } else if (currentLanguage === 'en') {
+        feedbackTitle.textContent = 'Leave your feedback:';
+        feedbackTextarea.placeholder = 'Write your feedback here...';
+        feedbackSubmit.textContent = 'Submit';
+    }
+}
 
     // Оновлення текстів на кнопках станцій
     document.querySelectorAll('.station-item').forEach(button => {
