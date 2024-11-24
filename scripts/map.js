@@ -25,48 +25,6 @@ const textData = {
         'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" }
     }
 };
-const feedbackText = {
-    uk: {
-        title: "Залиште ваш відгук:",
-        placeholder: "Напишіть свій відгук тут...",
-        button: "Відправити",
-        success: "Дякуємо за ваш відгук!",
-        error: "Будь ласка, напишіть свій відгук перед відправленням!"
-    },
-    en: {
-        title: "Leave your feedback:",
-        placeholder: "Write your feedback here...",
-        button: "Submit",
-        success: "Thank you for your feedback!",
-        error: "Please write your feedback before submitting!"
-    }
-};
-// Дані для вікторини
-const quizData = [
-    {
-        question: {
-            uk: "Де народився Ісус?",
-            en: "Where was Jesus born?"
-        },
-        options: {
-            uk: ["Вифлеєм", "Єрусалим", "Назareth", "Капернаум"],
-            en: ["Bethlehem", "Jerusalem", "Nazareth", "Capernaum"]
-        },
-        correct: 0 // Індекс правильної відповіді
-    },
-    {
-        question: {
-            uk: "Хто повідомив пастухам про народження Ісуса?",
-            en: "Who told the shepherds about Jesus' birth?"
-        },
-        options: {
-            uk: ["Цар", "Ангел", "Мудреці", "Йосип"],
-            en: ["King", "Angel", "Wise Men", "Joseph"]
-        },
-        correct: 1
-    }
-    // Додайте ще питання...
-];
 
 // Глобальні змінні
 let currentLanguage = 'uk'; // Поточна мова
@@ -80,62 +38,6 @@ function showQuestion() {
     } else {
         alert("Спробуй ще раз!");
     }
-}
-function updateFeedbackModalLanguage() {
-    const feedbackModal = document.getElementById("feedback-modal");
-    const currentTexts = feedbackText[currentLanguage];
-
-    document.getElementById("feedback-title").textContent = currentTexts.title;
-    document.getElementById("feedback-textarea").placeholder = currentTexts.placeholder;
-    document.getElementById("feedback-submit").textContent = currentTexts.button;
-}
-function submitFeedback() {
-    const feedbackTextarea = document.getElementById("feedback-textarea");
-    const feedbackTextValue = feedbackTextarea.value.trim();
-
-    if (!feedbackTextValue) {
-        alert(feedbackText[currentLanguage].error);
-        return;
-    }
-function showFeedbackModal() {
-    const feedbackModal = document.getElementById("feedback-modal");
-    feedbackModal.classList.remove("feedback-hidden");
-    feedbackModal.classList.add("feedback-visible");
-    updateFeedbackModalLanguage(); // Оновлюємо тексти залежно від мови
-}
-function changeLanguage(lang) {
-    currentLanguage = lang;
-
-    // Оновлення текстів на кнопках станцій
-    document.querySelectorAll('.station-item').forEach(button => {
-        const station = button.getAttribute('onclick').match(/'(.+)'/)[1];
-        const stationText = textData[currentLanguage][station]?.name || "Unknown";
-        button.querySelector('.station-label').textContent = stationText;
-    });
-
-    // Оновлення заголовка
-    const title = document.getElementById('page-title');
-    title.textContent = currentLanguage === 'uk'
-        ? 'Інтерактивна Карта "Ніч у Вифлеємі"'
-        : 'Interactive Map "Night in Bethlehem"';
-
-    // Оновлення текстів у відгуках
-    updateFeedbackModalLanguage();
-}
-
-    // Збереження відгуку в LocalStorage
-    const feedbacks = JSON.parse(localStorage.getItem("feedbacks") || "[]");
-    feedbacks.push(feedbackTextValue);
-    localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
-
-    // Очистити текстове поле
-    feedbackTextarea.value = "";
-
-    // Закрити модальне вікно
-    hideFeedbackModal();
-
-    // Підтвердження
-    alert(feedbackText[currentLanguage].success);
 }
 
 // Функція для зміни мови
@@ -219,45 +121,6 @@ function submitFeedback() {
         alert("Будь ласка, залиште коментар.");
     }
 }
-// Функція для відкриття модального вікна
-function showFeedbackModal() {
-    const feedbackModal = document.getElementById("feedback-modal");
-    feedbackModal.classList.remove("feedback-hidden");
-    feedbackModal.classList.add("feedback-visible");
-}
-
-// Функція для закриття модального вікна
-function hideFeedbackModal() {
-    const feedbackModal = document.getElementById("feedback-modal");
-    feedbackModal.classList.remove("feedback-visible");
-    feedbackModal.classList.add("feedback-hidden");
-}
-
-// Функція для обробки відправки відгуку
-function submitFeedback() {
-    const feedbackTextarea = document.getElementById("feedback-textarea");
-    const feedbackText = feedbackTextarea.value.trim();
-
-    if (!feedbackText) {
-        alert("Будь ласка, напишіть свій відгук перед відправленням!");
-        return;
-    }
-
-    // Збереження відгуку або виконання іншої логіки
-    console.log("Ваш відгук:", feedbackText);
-
-    // Очищення поля
-    feedbackTextarea.value = "";
-
-    // Закриття модального вікна
-    hideFeedbackModal();
-
-    // Підтвердження
-    alert("Дякуємо за ваш відгук!");
-}
-
-// Додавання обробника події до кнопки
-document.getElementById("feedback-submit").addEventListener("click", submitFeedback);
 
 // Функція для перемикання статусу станції
 function toggleCompletion() {
@@ -283,59 +146,4 @@ document.getElementById("modal").addEventListener("click", (event) => {
     if (event.target.id === "modal") {
         closeModal();
     }
-    let currentQuestionIndex = 0; // Індекс поточного питання
-
-function showQuizModal() {
-    const quizModal = document.getElementById("quiz-modal");
-    quizModal.classList.add("quiz-visible");
-    displayQuestion();
-}
-function closeQuizModal() {
-    const quizModal = document.getElementById("quiz-modal");
-    quizModal.classList.remove("quiz-visible");
-    currentQuestionIndex = 0; // Скидаємо індекс питання
-}
-function displayQuestion() {
-    const questionData = quizData[currentQuestionIndex];
-    const currentLang = currentLanguage;
-
-    // Оновлюємо текст питання
-    document.getElementById("quiz-question").textContent = questionData.question[currentLang];
-
-    // Створюємо варіанти відповідей
-    const optionsContainer = document.getElementById("quiz-options");
-    optionsContainer.innerHTML = ""; // Очищаємо попередні варіанти
-    questionData.options[currentLang].forEach((option, index) => {
-        const button = document.createElement("button");
-        button.textContent = option;
-        button.onclick = () => checkAnswer(index);
-        optionsContainer.appendChild(button);
-    });
-
-    // Приховуємо кнопку "Наступне питання"
-    document.getElementById("next-question").style.display = "none";
-}
-function checkAnswer(selectedIndex) {
-    const questionData = quizData[currentQuestionIndex];
-    const correctIndex = questionData.correct;
-
-    if (selectedIndex === correctIndex) {
-        alert(currentLanguage === "uk" ? "Правильно!" : "Correct!");
-    } else {
-        alert(currentLanguage === "uk" ? "Неправильно. Спробуйте ще раз!" : "Incorrect. Try again!");
-    }
-
-    // Показуємо кнопку "Наступне питання"
-    document.getElementById("next-question").style.display = "block";
-}
-function nextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizData.length) {
-        displayQuestion();
-    } else {
-        alert(currentLanguage === "uk" ? "Вікторина завершена!" : "Quiz completed!");
-        closeQuizModal();
-    }
-}
-
 });
