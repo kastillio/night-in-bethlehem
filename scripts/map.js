@@ -10,7 +10,12 @@ const textData = {
         'spices': { name: "Магазин спецій", description: "Що могли розповісти спеції про людей?" },
         'wise-men': { name: "Мудреці", description: "Що мудреці принесли до Вифлеєму і чому це було важливо?" },
         'spinning-wheel': { name: "Прядильне колесо", description: "Дізнайтеся, як створювали одяг у стародавні часи, та виберіть костюм для фотозони!" },
-        'photo-zone': { name: "Фотозона", description: "Зробіть фото, яке збереже цю мить!" }
+        'photo-zone': { name: "Фотозона", description: "Зробіть фото, яке збереже цю мить!" },
+        'feedback-title': "Залиште ваш відгук:",
+        'feedback-placeholder': "Напишіть свій відгук тут...",
+        'feedback-submit': "Відправити",
+        'feedback-success': "Дякуємо за ваш відгук!",
+        'feedback-empty': "Будь ласка, напишіть свій відгук."
     },
     en: {
         'shepherds': { name: "Shepherds", description: "Find out why God chose the shepherds to hear the Good News first!" },
@@ -22,7 +27,12 @@ const textData = {
         'spices': { name: "Spice Market", description: "What could spices reveal about the people who used them?" },
         'wise-men': { name: "Wise Men", description: "What gifts did the Wise Men bring, and why were they significant?" },
         'spinning-wheel': { name: "Spinning Wheel", description: "Learn how clothes were made in ancient times and choose a costume for the photo booth!" },
-        'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" }
+        'photo-zone': { name: "Photo Zone", description: "Take a picture to remember this special moment forever!" },
+        'feedback-title': "Leave your feedback:",
+        'feedback-placeholder': "Write your feedback here...",
+        'feedback-submit': "Submit",
+        'feedback-success': "Thank you for your feedback!",
+        'feedback-empty': "Please write your feedback."
     }
 };
 
@@ -56,15 +66,9 @@ function updateFeedbackLanguage() {
     const feedbackTextarea = document.getElementById('feedback-textarea');
     const feedbackSubmit = document.getElementById('feedback-submit');
 
-    if (currentLanguage === 'uk') {
-        feedbackTitle.textContent = 'Залиште ваш відгук:';
-        feedbackTextarea.placeholder = 'Напишіть свій відгук тут...';
-        feedbackSubmit.textContent = 'Відправити';
-    } else if (currentLanguage === 'en') {
-        feedbackTitle.textContent = 'Leave your feedback:';
-        feedbackTextarea.placeholder = 'Write your feedback here...';
-        feedbackSubmit.textContent = 'Submit';
-    }
+    feedbackTitle.textContent = textData[currentLanguage]['feedback-title'];
+    feedbackTextarea.placeholder = textData[currentLanguage]['feedback-placeholder'];
+    feedbackSubmit.textContent = textData[currentLanguage]['feedback-submit'];
 }
 
 // Функція для обробки відгуків
@@ -74,11 +78,32 @@ function handleFeedbackSubmission() {
 
     if (feedback) {
         // Відображення повідомлення залежно від мови
-        alert(currentLanguage === 'uk' ? 'Дякуємо за ваш відгук!' : 'Thank you for your feedback!');
+        alert(textData[currentLanguage]['feedback-success']);
         feedbackTextarea.value = ''; // Очищення текстового поля
     } else {
-        alert(currentLanguage === 'uk' ? 'Будь ласка, напишіть свій відгук.' : 'Please write your feedback.');
+        alert(textData[currentLanguage]['feedback-empty']);
     }
+}
+
+// Функція для відкриття модального вікна
+function openModal(station) {
+    const modal = document.getElementById("modal");
+    const stationData = textData[currentLanguage][station];
+
+    if (stationData) {
+        document.getElementById("modal-title").textContent = stationData.name;
+        document.getElementById("modal-text").textContent = stationData.description;
+        document.getElementById("modal-image").src = `images/${station}.png`;
+    }
+
+    modal.classList.add("show");
+    modal.dataset.station = station;
+}
+
+// Функція для закриття модального вікна
+function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.classList.remove("show");
 }
 
 // Додати обробник до кнопки
