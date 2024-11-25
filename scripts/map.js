@@ -61,7 +61,10 @@ function updateFeedbackLanguage() {
         feedbackTitle.textContent = 'Leave your feedback:';
         feedbackTextarea.placeholder = 'Write your feedback here...';
         feedbackSubmit.textContent = 'Submit';
+     
     }
+     // Оновлення тексту у відгуках
+    updateFeedbackLanguage();
 }
 // Інші функції, наприклад, changeLanguage, openModal
 
@@ -96,8 +99,7 @@ document.getElementById('feedback-submit').addEventListener('click', function ()
         ? 'Інтерактивна Карта "Ніч у Вифлеємі"'
         : 'Interactive Map "Night in Bethlehem"';
 
-    // Оновлення тексту у відгуках
-    updateFeedbackLanguage();
+
 
 }
 
