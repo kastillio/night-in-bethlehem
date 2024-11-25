@@ -35,6 +35,8 @@ const textData = {
         'feedback-empty': "Please write your feedback."
     }
 };
+// Зберігає статус кожної станції (пройдено/непройдено)
+let stationStatus = {};
 
 // Глобальні змінні
 let currentLanguage = 'uk'; // Поточна мова
