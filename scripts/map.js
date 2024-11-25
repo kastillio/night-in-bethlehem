@@ -385,4 +385,9 @@ function closeQuizModal() {
         quizModal.classList.add("hidden");
     }
 }
+try {
+    showQuizModal('shepherds');
+} catch (error) {
+    console.error("Помилка при відкритті модального вікна:", error);
+}
 
