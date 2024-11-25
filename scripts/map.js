@@ -107,6 +107,28 @@ function closeModal() {
     const modal = document.getElementById("modal");
     modal.classList.remove("show");
 }
+// Функція для перемикання статусу станції (пройдено/не пройдено)
+function toggleCompletion() {
+    const modal = document.getElementById("modal");
+    const station = modal.dataset.station; // Отримуємо поточну станцію
+    const button = document.querySelector(`.station-item[onclick="openModal('${station}')"]`);
+
+    // Перемикаємо статус станції
+    stationStatus[station] = !stationStatus[station];
+
+    // Оновлюємо текст на кнопці у модальному вікні
+    const completeButton = document.getElementById("complete-button");
+    completeButton.textContent = stationStatus[station]
+        ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+        : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
+
+    // Оновлюємо клас кнопки станції (наприклад, додаємо/знімаємо клас "completed")
+    if (stationStatus[station]) {
+        button.classList.add("completed");
+    } else {
+        button.classList.remove("completed");
+    }
+}
 
 // Оновлення тексту у модальному вікні
 function updateModalText(station) {
