@@ -86,25 +86,43 @@ function handleFeedbackSubmission() {
     }
 }
 
+  // Оновлення тексту у модальному вікні
+    const modal = document.getElementById('modal');
+    if (modal.classList.contains('show')) {
+        updateModalText(modal.dataset.station);
+    }
+}
+
 // Функція для відкриття модального вікна
 function openModal(station) {
     const modal = document.getElementById("modal");
-    const stationData = textData[currentLanguage][station];
-
-    if (stationData) {
-        document.getElementById("modal-title").textContent = stationData.name;
-        document.getElementById("modal-text").textContent = stationData.description;
-        document.getElementById("modal-image").src = `images/${station}.png`;
-    }
-
-    modal.classList.add("show");
     modal.dataset.station = station;
+
+    // Оновлення тексту та зображення у модальному вікні
+    updateModalText(station);
+
+    // Відображення модального вікна
+    modal.classList.add("show");
 }
 
 // Функція для закриття модального вікна
 function closeModal() {
     const modal = document.getElementById("modal");
     modal.classList.remove("show");
+}
+
+// Оновлення тексту у модальному вікні
+function updateModalText(station) {
+    const description = textData[currentLanguage][station]?.description || "Опис недоступний";
+    const imgSrc = `images/${station}.png`;
+
+    document.getElementById("modal-image").src = imgSrc;
+    document.getElementById("modal-text").textContent = description;
+
+    const completeButton = document.getElementById("complete-button");
+    completeButton.textContent = stationStatus[station]
+        ? (currentLanguage === 'uk' ? "Зняти галочку" : "Remove Mark")
+        : (currentLanguage === 'uk' ? "Пройдено" : "Completed");
 }
 
 // Додати обробник до кнопки
