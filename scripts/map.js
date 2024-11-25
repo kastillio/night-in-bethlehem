@@ -381,5 +381,8 @@ function checkAnswer(selectedIndex) {
 // Функція для закриття модального вікна вікторини
 function closeQuizModal() {
     const quizModal = document.getElementById("quiz-modal");
-    quizModal.classList.add("hidden"); // Ховаємо модальне вікно
+    if (quizModal) {
+        quizModal.classList.add("hidden");
+    }
 }
+
