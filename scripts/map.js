@@ -129,7 +129,12 @@ function toggleCompletion() {
         button.classList.remove("completed");
     }
 }
-
+// Функція для перегляду всіх відгуків
+function displayFeedbacks() {
+    const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+    console.log('Feedbacks:', feedbacks);
+    alert(feedbacks.join('\n')); // Виводить усі відгуки через алерт
+}
 // Оновлення тексту у модальному вікні
 function updateModalText(station) {
     const description = textData[currentLanguage][station]?.description || "Опис недоступний";
