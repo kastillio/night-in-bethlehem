@@ -50,6 +50,7 @@ function changeLanguage(lang) {
         button.querySelector('.station-label').textContent = stationText;
     });
 
+
     // Оновлення заголовка
     const title = document.getElementById('page-title');
     title.textContent = currentLanguage === 'uk'
