@@ -328,13 +328,18 @@ function showQuizModal(station) {
 
 // Функція для завантаження питання
 function loadQuestion() {
-    const quizQuestionElement = document.getElementById("quiz-question"); // Блок питання
-    const quizOptionsElement = document.getElementById("quiz-options"); // Блок варіантів відповідей
-    const language = currentLanguage; // Поточна мова (uk або en)
+    const quizQuestionElement = document.getElementById("quiz-question");
+    const quizOptionsElement = document.getElementById("quiz-options");
+    const language = currentLanguage; // Поточна мова
 
     // Фільтруємо питання для обраної станції
     const questions = quizData[language].filter(q => q.station === currentStation);
-    const currentQuestion = questions[currentQuestionIndex]; // Беремо поточне питання
+    const currentQuestion = questions[currentQuestionIndex];
+
+    if (!currentQuestion) {
+        console.error("Питання не знайдено!");
+        return;
+    }
 
     // Оновлюємо текст питання
     quizQuestionElement.textContent = currentQuestion.question;
@@ -347,10 +352,11 @@ function loadQuestion() {
         const button = document.createElement("button");
         button.textContent = option;
         button.classList.add("quiz-option");
-        button.onclick = () => checkAnswer(index); // Перевіряємо відповідь
-        quizOptionsElement.appendChild(button); // Додаємо кнопку до DOM
+        button.onclick = () => checkAnswer(index);
+        quizOptionsElement.appendChild(button);
     });
 }
+
 // Функція для перевірки відповіді
 function checkAnswer(selectedIndex) {
     const questions = quizData[currentLanguage].filter(q => q.station === currentStation);
