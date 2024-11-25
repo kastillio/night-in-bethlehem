@@ -129,6 +129,30 @@ function toggleCompletion() {
         button.classList.remove("completed");
     }
 }
+// Збереження відгуку у LocalStorage
+document.getElementById('feedback-submit').addEventListener('click', function () {
+    const feedbackTextarea = document.getElementById('feedback-textarea');
+    const feedback = feedbackTextarea.value.trim();
+
+    if (feedback) {
+        // Отримуємо існуючі відгуки з LocalStorage
+        let feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+        
+        // Додаємо новий відгук
+        feedbacks.push(feedback);
+        
+        // Зберігаємо оновлений список у LocalStorage
+        localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+        
+        // Повідомлення про успіх
+        alert(currentLanguage === 'uk' ? 'Дякуємо за ваш відгук!' : 'Thank you for your feedback!');
+        
+        // Очищення текстового поля
+        feedbackTextarea.value = '';
+    } else {
+        alert(currentLanguage === 'uk' ? 'Будь ласка, напишіть свій відгук.' : 'Please write your feedback.');
+    }
+});
 // Функція для перегляду всіх відгуків
 function displayFeedbacks() {
     const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
