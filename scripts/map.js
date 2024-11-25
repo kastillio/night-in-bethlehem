@@ -86,12 +86,7 @@ function handleFeedbackSubmission() {
     }
 }
 
-  // Оновлення тексту у модальному вікні
-    const modal = document.getElementById('modal');
-    if (modal.classList.contains('show')) {
-        updateModalText(modal.dataset.station);
-    }
-}
+ 
 
 // Функція для відкриття модального вікна
 function openModal(station) {
