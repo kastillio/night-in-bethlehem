@@ -315,10 +315,17 @@ let currentStation = null; // Станція, до якої належить в�
 function showQuizModal(station) {
     currentStation = station; // Встановлюємо станцію
     currentQuestionIndex = 0; // Починаємо з першого питання
+
     const quizModal = document.getElementById("quiz-modal");
+    if (!quizModal) {
+        console.error("Модальне вікно з вікториною не знайдено!");
+        return;
+    }
+
     quizModal.classList.remove("hidden"); // Показуємо модальне вікно
     loadQuestion(); // Завантажуємо перше питання
 }
+
 // Функція для завантаження питання
 function loadQuestion() {
     const quizQuestionElement = document.getElementById("quiz-question"); // Блок питання
