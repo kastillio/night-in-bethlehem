@@ -180,3 +180,65 @@ document.getElementById('feedback-submit').addEventListener('click', handleFeedb
 window.onload = function () {
     updateFeedbackLanguage(); // Встановити мову за замовчуванням
 };
+// Функція для запуску вікторини
+let currentQuestionIndex = 0; // Змінна для поточного питання
+let currentStation = null; // Станція, до якої належить вікторина
+
+function showQuizModal(station) {
+    currentStation = station; // Встановлюємо станцію
+    currentQuestionIndex = 0; // Починаємо з першого питання
+    const quizModal = document.getElementById("quiz-modal");
+    quizModal.classList.remove("hidden"); // Показуємо модальне вікно
+    loadQuestion(); // Завантажуємо перше питання
+}
+// Функція для завантаження питання
+function loadQuestion() {
+    const quizQuestionElement = document.getElementById("quiz-question"); // Блок питання
+    const quizOptionsElement = document.getElementById("quiz-options"); // Блок варіантів відповідей
+    const language = currentLanguage; // Поточна мова (uk або en)
+
+    // Фільтруємо питання для обраної станції
+    const questions = quizData[language].filter(q => q.station === currentStation);
+    const currentQuestion = questions[currentQuestionIndex]; // Беремо поточне питання
+
+    // Оновлюємо текст питання
+    quizQuestionElement.textContent = currentQuestion.question;
+
+    // Очищаємо попередні варіанти відповідей
+    quizOptionsElement.innerHTML = "";
+
+    // Додаємо нові варіанти відповідей
+    currentQuestion.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.classList.add("quiz-option");
+        button.onclick = () => checkAnswer(index); // Перевіряємо відповідь
+        quizOptionsElement.appendChild(button); // Додаємо кнопку до DOM
+    });
+}
+// Функція для перевірки відповіді
+function checkAnswer(selectedIndex) {
+    const questions = quizData[currentLanguage].filter(q => q.station === currentStation);
+    const currentQuestion = questions[currentQuestionIndex];
+
+    // Перевіряємо, чи правильна відповідь
+    if (selectedIndex === currentQuestion.correct) {
+        alert(currentLanguage === "uk" ? "Правильно!" : "Correct!");
+    } else {
+        alert(currentLanguage === "uk" ? "Неправильно, спробуйте ще раз!" : "Wrong, try again!");
+    }
+
+    // Завантажуємо наступне питання або завершуємо вікторину
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion(); // Наступне питання
+    } else {
+        closeQuizModal(); // Закриваємо модальне вікно
+        alert(currentLanguage === "uk" ? "Вікторина завершена!" : "Quiz completed!");
+    }
+}
+// Функція для закриття модального вікна вікторини
+function closeQuizModal() {
+    const quizModal = document.getElementById("quiz-modal");
+    quizModal.classList.add("hidden"); // Ховаємо модальне вікно
+}
